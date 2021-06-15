@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/head') %> 
+    <link rel="stylesheet" href="/css/productDetail.css">
+ 
+</head>
+<body>
+    <header>
+        <%- include('../../partials/header') %> 
+    </header>
+
+    <section >
+
+     <h2> DOMOS</h2>
+         
+                    <% productos.forEach((producto)=> {%>
+    
+    <div class="card-deck">
+             <div class="card">
+                 <img class="card-img-top" src="https://www.ecocamp.travel/hubfs/Standard%20Dome%20EcoCamp%20Patagonia%201920x1281_960.webp" alt="Card image cap">
+                 <div class="card-body">
+                <a href="/booking/detalle/<%= producto.id %>">
+                <h5 class="card-title"><%= producto.name%></h5>
+                <p class="card-text">  Destinos disponibles <%= producto.destination %>
+                  <br>  
+                 <p> Estan permitidos hasta <%= producto.pax %> pasajeros por Domo</p>
+                <br> 
+                
+               <small class="text-muted">precios a partir de ...<%= producto.prize %>
+              </small> <div class="card-footer">
+              <div class="btn-group" role="group" aria-label="Basic example">
+
+                      <form action="/booking/detalle/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-secondary">Borrar domo</button></form>
+
+                      <form action="/booking/edit/<%= producto.id %>?_method=PUT" method="POST">
+                         <button type="submit" class="btn btn-secondary">Editar</button></form>
+                          
+                         
+                          </div>
+
+                      <form action="">  <button type="button" class="btn btn-secondary">Agregar al Carrito</button></form>
+                     </div>
+              </div>
+            </div>  
+          </div>
+                     
+
+               
+          
+                        <% }) %>
+              
+           
+           
+          
+
+          <footer> <%- include('../../partials/footer') %></footer>
+</body>
+</html>

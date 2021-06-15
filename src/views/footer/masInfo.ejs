@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../../partials/head') %> 
+    <link rel="stylesheet" href="/css/masInfo.css">
+     <title>Mas info..</title>
+</head>
+<body>
+    <header><section class="top-header">
+        <div>
+             <img src="/images/weglamp.png" width="200">
+         </div>
+         <div> <a href="/main/index"><i class="fas fa-bars"></i></a>
+                
+         </div>
+         <div class="main-header-top-bar">
+                 <h2 class="log-in">
+                       <a href="/user/login">Iniciar Sesion</a> </h2>
+                 <h2 class="ayuda">
+                         <a href="/main/index">Volver</a></h2>
+        </div>
+    </section>
+</header>
+        <h1> Campamentos de lujo en plena naturaleza</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="https://cdni.rbth.com/rbthmedia/images/2020.03/original/5e68c86385600a2c9c028242.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://catalogue.novascotia.com/ManagedMedia/21657.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://fdomes.com/wp-content/uploads/2015/10/Dome-tent-in-British-Columbia-by-Freedomes-for-Skeena-Heliskiing1-optimized.jpg" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+        
+      <footer> <%- include('../../partials/footer') %></footer>
+     
+</body>
+</html>

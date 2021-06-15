@@ -1,4 +1,4 @@
-# grupo_6_
+# grupo_9_weglamp
 https://trello.com/invite/b/VdvcE4XD/45eb39ae97ab0b95f68aa2142ea6a14d/grupo6sprint1
 
 * E-commerce de turismo "Glamping"
@@ -43,11 +43,11 @@ Eco–lodge, Yurtas o domos, Tiendas safari, Iglú, Tiendas de lona, Auto carava
 
 * descripción de los integrantes del equipo
 
-Hola, soy Lorena Verónica Luna, tengo 43 años, casada y 4 hijas, vivo en Escobar, Buenos Aires, Argentina
+. Hola, soy Lorena Verónica Luna, tengo 43 años, casada y 4 hijas, vivo en Escobar, Buenos Aires, Argentina
 Soy técnica en gestión de Servicios Turísticos, trabaje toda mi vida en aviación en diferentes aerolíneas. Actualmente me desempeño como Idónea de una agencia de turismo.
 
-Ignacio Barletta Trípodi, soltero, tengo 38 años y vivo en Pilar, Buenos Aires, Argentina.
-Soy emprendedor y actualmente trabajo en una insurtech que fundé en 2017 junto a un amigo llamada "leverbox" la cual posee presencia en 6 países.
-Fanático de River, actualmente miembro de la comisión de Relaciones Institucionales del club.
+. Deza, Ezequiel: soporte IT con años de experiencia en el rol, pero aspiraciones de crecer en otro campo del rubro.
 
-¡Hola! Me llamo Facundo Vera, tengo 17 años, actualmente estoy en la secundaria a un año de terminarla, resido en Caballito, Ciudad Autónoma de Buenos Aires.
+. Goicoa, Juan Ignacio: Planeamiento y control de la producción. A cargo del 100% la producción como también del personal operativo. Con más de 17 años de experiencia en el rubro textil. Tratando de retomar una vieja pasión, que por circunstancias personales tuve que dejar.
+
+. Lawrie, Ángeles: Especialista en Marketing Digital. Me anoté en el curso para tener más herramientas laborales. Entender, hablar un mismo idioma con desarrolladores a la hora de trabajar es uno de mis principales objetivos.

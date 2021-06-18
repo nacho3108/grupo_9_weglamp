@@ -1,7 +1,7 @@
 {
-  "name": "grupo_6_",
-  "version": "1.0.1",
-  "description": "https://trello.com/invite/b/VdvcE4XD/45eb39ae97ab0b95f68aa2142ea6a14d/grupo6sprint1",
+  "name": "weglamp",
+  "version": "1.0.0",
+  "description": "E-commerce de turismo",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IgnacioBarletta/grupo_6_.git"
+    "url": "git+https://github.com/nacho3108/grupo_9_weglamp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IgnacioBarletta/grupo_6_/issues"
+    "url": "https://github.com/nacho3108/grupo_9_weglamp/issues"
   },
-  "homepage": "https://github.com/IgnacioBarletta/grupo_6_#readme",
+  "homepage": "https://github.com/nacho3108/grupo_9_weglamp#readme",
   "dependencies": {
     "bootstrap": "^5.0.1",
     "cookie-parser": "^1.4.5",

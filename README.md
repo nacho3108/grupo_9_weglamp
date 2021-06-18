@@ -1,5 +1,5 @@
 # grupo_9_weglamp
-https://trello.com/invite/b/VdvcE4XD/45eb39ae97ab0b95f68aa2142ea6a14d/grupo6sprint1
+https://trello.com/b/TixP9R5M/weglamp
 
 * E-commerce de turismo "Glamping"
 * Nombre:  WeGlamp

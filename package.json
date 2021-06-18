@@ -4,7 +4,9 @@
   "description": "https://trello.com/invite/b/VdvcE4XD/45eb39ae97ab0b95f68aa2142ea6a14d/grupo6sprint1",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,12 @@
   },
   "homepage": "https://github.com/IgnacioBarletta/grupo_6_#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bootstrap": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.2"
   },
   "devDependencies": {}
 }

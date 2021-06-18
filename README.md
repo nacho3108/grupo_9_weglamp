@@ -42,11 +42,11 @@ Eco–lodge, Yurtas o domos, Tiendas safari, Iglú, Tiendas de lona, Auto carava
 
 * descripción de los integrantes del equipo
 
-. Hola, soy Lorena Verónica Luna, tengo 43 años, casada y 4 hijas, vivo en Escobar, Buenos Aires, Argentina
+  Hola, soy Lorena Verónica Luna, tengo 43 años, casada y 4 hijas, vivo en    Escobar, Buenos Aires, Argentina
   Soy técnica en gestión de Servicios Turísticos, trabaje toda mi vida en aviación en diferentes aerolíneas. Actualmente me desempeño como Idónea de una agencia de   turismo.
 
-. Deza, Ezequiel: soporte IT con años de experiencia en el rol, pero aspiraciones de crecer en otro campo del rubro.
+  Deza, Ezequiel: soporte IT con años de experiencia en el rol, pero aspiraciones de crecer en otro campo del rubro.
 
-. Goicoa, Juan Ignacio: Planeamiento y control de la producción. A cargo del 100% la producción como también del personal operativo. Con más de 17 años de experiencia en el rubro textil. Tratando de retomar una vieja pasión, que por circunstancias personales tuve que dejar.
+  Goicoa, Juan Ignacio: Planeamiento y control de la producción. A cargo del 100% la producción como también del personal operativo. Con más de 17 años de experiencia en el rubro textil. Tratando de retomar una vieja pasión, que por circunstancias personales tuve que dejar.
 
-. Lawrie, Ángeles: Especialista en Marketing Digital. Me anoté en el curso para tener más herramientas laborales. Entender, hablar un mismo idioma con  desarrolladores a la hora de trabajar es uno de mis principales objetivos.
+  Lawrie, Ángeles: Especialista en Marketing Digital. Me anoté en el curso para tener más herramientas laborales. Entender, hablar un mismo idioma con  desarrolladores a la hora de trabajar es uno de mis principales objetivos.

@@ -1,23 +1,14 @@
 [
   {
-    "id": 4
-  },
-  {
-    "id": 5
-  },
-  {
-    "id": 6,
-    "name": "suit DOME",
-    "destination": "patagonia",
-    "pax": 2,
-    "prize": 15000
+    "id": 6
   },
   {
     "id": 7,
     "name": "standart",
     "destination": "patagonia",
     "pax": 3,
-    "prize": 20000
+    "prize": 20000,
+    "clase": "C"
   },
   {
     "id": 8
@@ -27,244 +18,282 @@
     "name": "suit DOME",
     "destination": "patagonia",
     "pax": 3,
-    "prize": 20000
+    "prize": 20000,
+    "clase": "A"
   },
   {
     "id": 10,
     "name": "standart",
     "destination": "patagonia",
     "pax": 4,
-    "prize": 25000
+    "prize": 25000,
+    "clase": "C"
   },
   {
     "id": 12,
     "name": "suit DOME",
     "destination": "patagonia",
     "pax": 4,
-    "prize": 25000
+    "prize": 25000,
+    "clase": "A"
   },
   {
     "id": 13,
     "name": "standart",
     "destination": "tigre",
     "pax": 1,
-    "prize": 9000
+    "prize": 9000,
+    "clase": "C"
   },
   {
     "id": 14,
     "name": "superior",
     "destination": "tigre",
     "pax": 1,
-    "prize": 9000
+    "prize": 9000,
+    "clase": "B"
   },
   {
     "id": 15,
     "name": "suit DOME",
     "destination": "tigre",
     "pax": 1,
-    "prize": 9000
+    "prize": 9000,
+    "clase": "A"
   },
   {
     "id": 16,
     "name": "standart",
     "destination": "tigre",
     "pax": 2,
-    "prize": 14000
+    "prize": 14000,
+    "clase": "C"
   },
   {
     "id": 17,
     "name": "superior",
     "destination": "tigre",
     "pax": 2,
-    "prize": 14000
+    "prize": 14000,
+    "clase": "B"
   },
   {
     "id": 18,
     "name": "suit DOME",
     "destination": "tigre",
     "pax": 2,
-    "prize": 14000
+    "prize": 14000,
+    "clase": "A"
   },
   {
     "id": 19,
     "name": "standart",
     "destination": "tigre",
     "pax": 3,
-    "prize": 19000
+    "prize": 19000,
+    "clase": "C"
   },
   {
     "id": 20,
     "destination": "tigre1234",
     "name": "superior",
     "pax": "5",
-    "prize": "1500"
+    "prize": "1500",
+    "clase": "B"
   },
   {
     "id": 21,
     "name": "suit DOME",
     "destination": "tigre",
     "pax": 3,
-    "prize": 19000
+    "prize": 19000,
+    "clase": "A"
   },
   {
     "id": 22,
     "name": "standart",
     "destination": "tigre",
     "pax": 4,
-    "prize": 24000
+    "prize": 24000,
+    "clase": "C"
   },
   {
     "id": 23,
     "name": "superior",
     "destination": "tigre",
     "pax": 4,
-    "prize": 24000
+    "prize": 24000,
+    "clase": "B"
   },
   {
     "id": 24,
     "name": "suit DOME",
     "destination": "tigre",
     "pax": 4,
-    "prize": 24000
+    "prize": 24000,
+    "clase": "A"
   },
   {
     "id": 25,
     "name": "standart",
     "destination": "lobos",
     "pax": 1,
-    "prize": 8000
+    "prize": 8000,
+    "clase": "C"
   },
   {
     "id": 26,
     "name": "superior",
     "destination": "lobos",
     "pax": 1,
-    "prize": 8000
+    "prize": 8000,
+    "clase": "B"
   },
   {
     "id": 27,
     "name": "suit DOME",
     "destination": "lobos",
     "pax": 1,
-    "prize": 8000
+    "prize": 8000,
+    "clase": "A"
   },
   {
     "id": 28,
     "name": "standart",
     "destination": "lobos",
     "pax": 2,
-    "prize": 13000
+    "prize": 13000,
+    "clase": "C"
   },
   {
     "id": 29,
     "name": "superior",
     "destination": "lobos",
     "pax": 2,
-    "prize": 13000
+    "prize": 13000,
+    "clase": "B"
   },
   {
     "id": 30,
     "name": "suit DOME",
     "destination": "lobos",
     "pax": 2,
-    "prize": 13000
+    "prize": 13000,
+    "clase": "A"
   },
   {
     "id": 31,
     "name": "standart",
     "destination": "lobos",
     "pax": 3,
-    "prize": 18000
+    "prize": 18000,
+    "clase": "C"
   },
   {
     "id": 32,
     "name": "superior",
     "destination": "lobos",
     "pax": 3,
-    "prize": 18000
+    "prize": 18000,
+    "clase": "B"
   },
   {
     "id": 33,
     "name": "suit DOME",
     "destination": "lobos",
     "pax": 3,
-    "prize": 18000
+    "prize": 18000,
+    "clase": "A"
   },
   {
     "id": 34,
     "name": "standart",
     "destination": "lobos",
     "pax": 4,
-    "prize": 23000
+    "prize": 23000,
+    "clase": "C"
   },
   {
     "id": 35,
     "name": "superior",
     "destination": "lobos",
     "pax": 4,
-    "prize": 23000
+    "prize": 23000,
+    "clase": "B"
   },
   {
     "id": 36,
     "name": "suit DOME",
     "destination": "lobos",
     "pax": 4,
-    "prize": 23000
+    "prize": 23000,
+    "clase": "A"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 37
+    "id": 37,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 38
+    "id": 38,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 39
+    "id": 39,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 40
+    "id": 40,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 41
+    "id": 41,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 42
+    "id": 42,
+    "clase": "C"
   },
   {
     "destination": "lorena",
     "name": "domo",
-    "id": 43
+    "id": 43,
+    "clase": "C"
   },
   {
     "destination": "",
     "name": "",
-    "id": 44
+    "id": 44,
+    "clase": "C"
   },
   {
     "destination": "",
     "name": "",
-    "id": 45
+    "id": 45,
+    "clase": "B"
   },
   {
     "destination": "tigre",
     "name": "domo",
-    "id": 46
+    "id": 46,
+    "clase": "B"
   },
   {
     "destination": "srgs",
     "name": "domo",
-    "id": 47
+    "id": 47,
+    "clase": "B"
   },
   {
     "destination": "escobar",
@@ -272,6 +301,7 @@
     "pax": "5",
     "prize": "1500",
     "image": "/images/1623332767362.jpg",
-    "id": 48
+    "id": 48,
+    "clase": "B"
   }
 ]

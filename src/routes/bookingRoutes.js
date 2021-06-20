@@ -34,7 +34,9 @@ const bookingControllers = require('../controllers/bookingControllers');
 
 bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail)
 
-bookingRoutes.get('/productList/:id?', bookingControllers.productList)
+bookingRoutes.get('/productList/', bookingControllers.productList)
+bookingRoutes.get('/productList/:clase', bookingControllers.productClase)
+
 
 bookingRoutes.post('/new',upload.single('image'), bookingControllers.store)
 bookingRoutes.get('/new',bookingControllers.new)

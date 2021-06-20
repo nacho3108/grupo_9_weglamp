@@ -4,11 +4,10 @@
   },
   {
     "id": 7,
+    "destination": "prueba ",
     "name": "standart",
-    "destination": "patagonia",
-    "pax": 3,
-    "prize": 20000,
-    "clase": "C"
+    "pax": "3",
+    "prize": "20000"
   },
   {
     "id": 8

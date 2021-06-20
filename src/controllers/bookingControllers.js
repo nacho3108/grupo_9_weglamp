@@ -12,6 +12,28 @@ const bookingControllers = {
         res.render('booking/productList', {productos})
     },
 
+
+    productClase: (req, res) => {
+        const clases = req.params.clase;
+        const clase =  productosModel.findByClass(clases)
+        res.render('booking/productList', {clase})
+    },
+
+ 
+
+
+    /*productClase :(req,res)=> {
+        const clase = req.params.clase
+        const detalleClase = productosModel.findByPk(clase)
+        res.render('booking/productList',{detalleClase})   
+    },
+
+   /*productByclass :(req,res)=>{
+        const productos = productosModel.findByPk()
+        res.render('booking/productList', {productByclass})
+    },   */
+    
+
     new :(req,res)=> {
         res.render('booking/new')   
     },

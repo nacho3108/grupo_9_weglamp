@@ -4,7 +4,7 @@
 
 Hoy realizamos la primera reunión inaugurando el nuevo equipo.
 
-En los últimos días...:
+En estos últimos días...:
 * Se determinó que vamos a continuar el proyecto que solía ser del equipo 6 (WeGlamp).
 * Se creó un nuevo repositorio para alojarlo.
 * Se organizó un nuevo tablero de Trello.
@@ -16,3 +16,18 @@ En los últimos días...:
 Nuestros objetivos para estos próximos días son:
 * Realizar los arreglos propuestos en la última devolución.
 * Trabajar en algunos arreglos de estilo.
+
+## Reunión 20/06
+
+En estos últimos días...:
+* Se estuvo trabajando la vista de detalle.
+* Se estuvieron trabajando los archivos parciales.
+* Se revisaron algunas correcciones generales.
+
+¿Hubo impedimentos?:
+* Aún no se pudo resolver la vista de detalle. Vamos a revisarlo entre todos en estos días y en el peor de los casos, queda para el co-learning.
+
+Nuestros objetivos para estos próximos días son:
+* Prepararnos para la clase práctica del martes.
+* Rever la vista de detalle.
+* Pushear correcciones de los parciales.

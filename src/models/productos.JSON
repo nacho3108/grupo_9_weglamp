@@ -1,26 +1,5 @@
 [
   {
-    "id": 6
-  },
-  {
-    "id": 7,
-    "destination": "prueba ",
-    "name": "standart",
-    "pax": "3",
-    "prize": "20000"
-  },
-  {
-    "id": 8
-  },
-  {
-    "id": 9,
-    "name": "suit DOME",
-    "destination": "patagonia",
-    "pax": 3,
-    "prize": 20000,
-    "clase": "A"
-  },
-  {
     "id": 10,
     "name": "standart",
     "destination": "patagonia",

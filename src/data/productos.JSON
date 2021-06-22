@@ -274,12 +274,10 @@
     "clase": "B"
   },
   {
-    "destination": "escobar",
-    "name": "delux",
-    "pax": "5",
-    "prize": "1500",
-    "image": "/images/1623332767362.jpg",
     "id": 48,
-    "clase": "B"
+    "destination": "",
+    "name": "",
+    "pax": "",
+    "prize": "210"
   }
 ]

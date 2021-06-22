@@ -1,4 +1,4 @@
-const mainControllers = {
+const mainController = {
     index: (req, res) => {
         res.render('index')
     },
@@ -7,4 +7,4 @@ const mainControllers = {
     }
 };
 
-module.exports = mainControllers;
+module.exports = mainController;

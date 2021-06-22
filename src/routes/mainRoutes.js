@@ -1,11 +1,8 @@
 const express = require('express');
 const mainRoutes = express.Router();
-const path = require('path');
+const mainController = require('../controllers/mainControllers');
 
-const mainControllers = require('../controllers/mainControllers');
+mainRoutes.get('/', mainController.index);
+mainRoutes.get('/ayuda', mainController.ayuda);
 
-mainRoutes.get('/index', mainControllers.index)
-mainRoutes.get('/ayuda', mainControllers.ayuda)
-
-
-module.exports = mainRoutes
+module.exports = mainRoutes;

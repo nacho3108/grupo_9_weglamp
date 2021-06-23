@@ -8,7 +8,7 @@ module.exports = {
        return JSON.parse(fs.readFileSync(this.filename)) 
     },
     
-    filename: path.resolve(__dirname, './register.JSON'),
+    filename: path.resolve(__dirname, '../data/register.JSON'),
 
 
 

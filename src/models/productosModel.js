@@ -10,7 +10,7 @@ module.exports = {
        return JSON.parse(fs.readFileSync(this.filename)) 
     },
     
-    filename: path.resolve(__dirname, './productos.JSON'),
+    filename: path.resolve(__dirname, '../data/productos.JSON'),
 
     findAll(){
         return this.readFile()

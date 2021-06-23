@@ -1,43 +1,34 @@
+// Módulos
 const express = require('express');
 const path = require('path');
-const app = express();
-const method = require('method-override');
+const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 
-
-app.use(method('_method'));
-app.set("view engine", "ejs")
-app.set('views','./src/views')
+// Configuración de Express
+const app = express();
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const publicpath = path.resolve(__dirname, '../public');
-
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(methodOverride('_method'));
+app.set('view engine', 'ejs');
+app.set('views','./src/views');
 
-app.use(express.static(publicpath));
+// Módulos de rutas
+const mainRoutes = require('./routes/mainRoutes');
+const aboutRoutes = require('./routes/aboutRoutes');
+const bookingRoutes = require('./routes/bookingRoutes');
+const userRoutes = require ('./routes/usersRoutes');
 
+// Configuración de rutas
+app.use('/', mainRoutes);
+app.use('/about', aboutRoutes);
+app.use('/booking', bookingRoutes);
+app.use('/user', userRoutes);
+
+// Ejecución del servidor de Express
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000')
 });
-app.get('/', (req,res) => {
-    res.render('index', {
-        tittle:'productos'
-    });
-});
 
-
-const aboutRoutes = require('./routes/aboutRoutes');
-app.use('/about', aboutRoutes);
-
-const mainRoutes = require('./routes/mainRoutes');
-app.use('/main', mainRoutes);
-
-const bookingRoutes = require('./routes/bookingRoutes');
-app.use('/booking', bookingRoutes);
-
-const userRoutes = require ('./routes/usersRoutes');
-app.use('/user', userRoutes);
-
-
-
+// Falta crear y agregar el 404 acá.

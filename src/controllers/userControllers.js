@@ -1,5 +1,6 @@
 const path = require('path')
 const registerModel = require('../models/registerModel')
+const bcrypt = require('bcryptjs')
 
 const userControllers = {
     login: (req, res) => {
@@ -9,14 +10,15 @@ const userControllers = {
     register: (req, res) => {
             res.render('users/register')
      },
-
+    
      store: (req, res) => {
         const { nombre, apellido, email, contraseña} = req.body;
+        const hashPassword = bcrypt.hashSync(contraseña, 10)
         const regist = {
             nombre:nombre,
             apellido:apellido,
             email:email,
-            contraseña:contraseña,
+            contraseña:hashPassword,
         }
         registerModel.create(regist)
         res.redirect('/')

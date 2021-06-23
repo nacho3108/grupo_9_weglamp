@@ -12,5 +12,13 @@
     "email": "lorenavluna@gmail.com",
     "contraseña": "lorena",
     "id": 1
+  },
+  {
+    "nombre": "horacio",
+    "apellido": "vega",
+    "email": "hove003@gmail.com",
+    "contraseña": "$2a$10$tshmoIQdVFOSYu9aoBszS.AJKLFzbtI.9SXFW7CvJBHbZo6xhBxJW",
+    "id": 2
   }
+
 ]

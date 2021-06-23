@@ -12,13 +12,14 @@ const userControllers = {
      },
     
      store: (req, res) => {
-        const { nombre, apellido, email, contraseña} = req.body;
+        const { nombre, apellido, email, contraseña, image} = req.body;
         const hashPassword = bcrypt.hashSync(contraseña, 10)
         const regist = {
             nombre:nombre,
             apellido:apellido,
             email:email,
             contraseña:hashPassword,
+            image: image,
         }
         registerModel.create(regist)
         res.redirect('/')

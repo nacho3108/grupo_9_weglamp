@@ -1,12 +1,6 @@
 [
   {
-    "id": 10,
-    "name": "standart",
-    "destination": "patagonia",
-    "pax": 4,
-    "prize": 25000,
-    "image": "https://www.ecocamp.travel/hubfs/Standard%20Dome%20EcoCamp%20Patagonia%201920x1281_960.webp",
-    "clase": "C"
+    "id": 10
   },
   {
     "id": 12,

@@ -19,6 +19,20 @@
     "email": "hove003@gmail.com",
     "contraseña": "$2a$10$tshmoIQdVFOSYu9aoBszS.AJKLFzbtI.9SXFW7CvJBHbZo6xhBxJW",
     "id": 2
+  },
+  {
+    "nombre": "horacio",
+    "apellido": "vega",
+    "email": "lorenavluna@hotmail.com",
+    "contraseña": "$2a$10$0ZJfGB1t/PjhGOW.IQ.oY.BeHwS4lFXGwae9gPAvl2KdNwv5JtO.G",
+    "id": 3
+  },
+  {
+    "nombre": "horacio",
+    "apellido": "vega",
+    "email": "lorenavluna@hotmail.com",
+    "contraseña": "$2a$10$p8ILrc0KOX0ullc7mbrPaOsmPUG4xcnRh6MwkHBMqwC7rf/zz/qs2",
+    "image": "weglamp.png",
+    "id": 4
   }
-
 ]

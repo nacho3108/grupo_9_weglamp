@@ -1,137 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-<%- include('./partials/head') %> 
-<link rel="stylesheet" href="/css/styles.css">
-
-</head>
-
-<body>
-
-<header>
-    <%- include('./partials/header') %> 
-  
-</header>
-
-<main>
-    <nav class="main-nav-bar"> 
-        <h3>Buscá tu paquete</h3>
-        <nav class="barradebusqueda">
-            <form action="/productDetail" method="POST">
-                   <select name="destino" id="destino">
-                    <option value="destino">Destino</option>
-                        <option value="patagonia">Patagonia</option>
-                        <option value="lobos">Lobos</option>
-                        <option value="tigre">Tigre</option>
-                    </select>
-
-                         <input type="date" name="checkinDate">
-                         <input type="date" name="checkoutDate">
-
-                <select name="Pax_a" id="pax_a">
-                    <option value="adultos">Adultos</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                 </select>
-                 <select name="Pax_m" id="pax_m"></label>
-                    <option value="menores">Menores</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                 </select>
-           
-            <i class="fas fa-search"><button type="submit"> <a href="/booking/productDetail">Buscar</a></button></i> 
-            
-        </form>
-        </nav>
-       
-        
-        <nav class="sindecidir">
-            <div class="switch_container">
-                <label class="form-switch">
-                    <input type="checkbox"> <i></i>No he decidido las fechas</label>
+    <head>
+        <%- include('./partials/head') %> 
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <header>
+            <%- include('./partials/header') %>
+        </header>
+        <main>
+            <nav class="main-nav-bar"> 
+                <h3>Buscá tu paquete</h3>
+                <nav class="barradebusqueda">
+                    <form action="/productDetail" method="POST">
+                        <select name="destino" id="destino">
+                            <option value="destino">Destino</option>
+                            <option value="patagonia">Patagonia</option>
+                            <option value="lobos">Lobos</option>
+                            <option value="tigre">Tigre</option>
+                        </select>
+                        <input type="date" name="checkinDate">
+                        <input type="date" name="checkoutDate">
+                        <select name="Pax_a" id="pax_a">
+                            <option value="adultos">Adultos</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select name="Pax_m" id="pax_m"></label>
+                            <option value="menores">Menores</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    <i class="fas fa-search"><button type="submit"> <a href="/booking/productDetail">Buscar</a></button></i> 
+                    </form>
+                </nav>        
+                <nav class="sindecidir">
+                    <div class="switch_container">
+                        <label class="form-switch">
+                        <input type="checkbox"> <i></i>No he decidido las fechas</label>
+                    </div>
+                </nav>
+            </nav>
+            <section class="beneficio">
+                <article class="beneficioUno"> 
+                    <img src="https://www.glampingsandat.com/wp-content/uploads/2016/12/glamping-sandat-resort-price.jpg" width="100%">
+                </article>
+            </section>
+            <h2 class="recomendados">Recomendados del Mes</h2>
+            <section class="destinos">
+                <article>
+                    <h3 class="destino1">Tigre</h3>
+                    <ul type="none" class="destino1">
+                        <li class="listadodestino">Delta, Argentina</li>
+                        <li class="listadodestino">seguro covid-19</li>
+                        <li class="listadodestino">traslados in/out</li>
+                        <li class="precio-destino">Valido mes: Junio</li>
+                        <li class="precioDestino">3 noches con desayuno</li>
+                        <button type="submit" class="verOferta">$ 15.000<br>Consultar</button>
+                    </ul>
+                </article>
+                <article>
+                    <h3 class="destino2">El Calafate</h3>    
+                    <ul type="none" class="destino2">
+                        <li class="listadodestino">Santa Cruz,Argentina</li>
+                        <li class="listadodestino">seguro covid-19</li>
+                        <li class="listadodestino">traslados in/out</li>
+                        <li class="precio-destino">Valido mes: Junio</li>
+                        <li class="precioDestino">4 noches con desayuno</li>
+                        <button type="submit" class="verOferta">$ 25.000<br>Consultar</button>
+                    </ul>
+                </article>
+                <article>
+                    <h3 class="destino3">Esquel</h3>
+                    <ul type="none" class="destino3">
+                        <li class="listadodestino">Cubut,Argentina</li>
+                        <li class="listadodestino">seguro covid-19</li>
+                        <li class="listadodestino">traslados in/out</li>
+                        <li class="precio-destino">Valido mes: Junio</li>
+                        <li class="precioDestino">5 noches con desayuno</li>
+                        <button type="submit" class="verOferta">$ 28.000<br>Consultar</button>
+                    </ul>
+                </article>
+                <article>
+                    <h3 class="destino4">Lobos</h3>
+                    <ul type="none" class="destino4">
+                        <li class="listadodestino">BuEnos Aires</li>
+                        <li class="listadodestino">seguro covid-19</li>
+                        <li class="listadodestino">traslados in/out</li>
+                        <li class="precio-destino">Valido mes: Junio</li>
+                        <li class="precioDestino">3 noches con desayuno</li>
+                        <button type="submit" class="verOferta">$ 20.000<br>Consultar</button>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-nav-bottom">
+                <img src="https://www.arquitecturaydiseno.es/medio/2019/05/16/[08]terlingua_c4505cae_1500x1000.jpg" width="700" alt="">
+                <div class="main-bottom">
+                    <h2> <strong>Encontrá ofertas para tu próximo destino</strong> </h2>
+                    <h4>suscribite a nuestro newsletter</h4>
+                    <input type="email" class="form-control">
+                    <input type="button" class="suscribirme" value="Suscribirme">
                 </div>
-        </nav>
-
-    </nav> 
-   
-    <section class="beneficio">
-        <article class="beneficioUno"> 
-            <img src="https://www.glampingsandat.com/wp-content/uploads/2016/12/glamping-sandat-resort-price.jpg" width="100%">
-        </article>
-
-    </section>
-
-    <h2 class="recomendados">Recomendados del Mes</h2>
-    <section class="destinos">
-    <article>
-        <h3 class="destino1">Tigre</h3>
-        <ul type="none" class="destino1">
-            <li class="listadodestino">Delta, Argentina</li>
-            <li class="listadodestino">seguro covid-19</li>
-            <li class="listadodestino">traslados in/out</li>
-            <li class="precio-destino">Valido mes: Junio</li>
-            <li class="precioDestino">3 noches con desayuno</li>
-            <button type="submit" class="verOferta">$ 15.000<br>Consultar</button>
-
-        </ul>
-    </article>
-    <article>
-        <h3 class="destino2">El Calafate</h3>    
-        <ul type="none" class="destino2">
-            <li class="listadodestino">Santa Cruz,Argentina</li>
-            <li class="listadodestino">seguro covid-19</li>
-            <li class="listadodestino">traslados in/out</li>
-            <li class="precio-destino">Valido mes: Junio</li>
-            <li class="precioDestino">4 noches con desayuno</li>
-            <button type="submit" class="verOferta">$ 25.000<br>Consultar</button>
-        </ul>
-    </article>
-    <article>
-        <h3 class="destino3">Esquel</h3>
-        <ul type="none" class="destino3">
-            <li class="listadodestino">Cubut,Argentina</li>
-            <li class="listadodestino">seguro covid-19</li>
-            <li class="listadodestino">traslados in/out</li>
-            <li class="precio-destino">Valido mes: Junio</li>
-            <li class="precioDestino">5 noches con desayuno</li>
-            <button type="submit" class="verOferta">$ 28.000<br>Consultar</button>
-            
-        </ul>
-    </article>
-    <article>
-
-    <h3 class="destino4">Lobos</h3>
-        <ul type="none" class="destino4">
-            <li class="listadodestino">BuEnos Aires</li>
-            <li class="listadodestino">seguro covid-19</li>
-            <li class="listadodestino">traslados in/out</li>
-            <li class="precio-destino">Valido mes: Junio</li>
-            <li class="precioDestino">3 noches con desayuno</li>
-            <button type="submit" class="verOferta">$ 20.000<br>Consultar</button>
-        </ul>
-    </article>
-</section>
-<section class="main-nav-bottom">
-    
-        <img src="https://www.arquitecturaydiseno.es/medio/2019/05/16/[08]terlingua_c4505cae_1500x1000.jpg" width="700" alt="">
-        <div class="main-bottom">
-             <h2> <strong>Encontrá ofertas para tu próximo destino</strong> </h2>
-             <h4>suscribite a nuestro newsletter</h4>
-             <input type="email" class="form-control">
-             <input type="button" class="suscribirme" value="Suscribirme">
-    </div>
-</section>
-</main>
-<footer>
-    <%- include('./partials/footer') %>
-</footer>
-
-</body>
-
-
+            </section>
+        </main>
+        <footer>
+            <%- include('./partials/footer') %>
+        </footer>
+    </body>
 </html>

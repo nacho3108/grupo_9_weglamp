@@ -1,16 +1,13 @@
-const express = require('express');
+const express = require("express");
 const userRoutes = express.Router();
-const path = require('path');
+const path = require("path");
 
-const multer = require('multer');
+const multer = require("multer");
 
-const userControllers = require('../controllers/userControllers');
+const userControllers = require("../controllers/userControllers");
 
-userRoutes.get('/login', userControllers.login)
-userRoutes.get('/register', userControllers.register)
-userRoutes.post('/register', userControllers.store)
-
-
-
+userRoutes.get("/login", userControllers.login)
+userRoutes.get("/register", userControllers.register)
+userRoutes.post("/register", userControllers.store)
 
 module.exports = userRoutes

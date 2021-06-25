@@ -48,7 +48,16 @@ const bookingControllers = {
 
     update: (req, res) => {
         const data = req.body;
+        const { file } = req;
         const { id } = req.params;
+        if(file.image == null){
+            return file.image
+        }else{
+            return product.image
+
+        }
+            
+        
    
         productosModel.update(data, id);
 
@@ -66,13 +75,13 @@ const bookingControllers = {
     store: (req, res) => {
         const { destination, name, pax, prize} = req.body;
         const { file } = req
-        const image = file.filename
+        const images = file.filename
         const product = {
             destination: destination,
             name:name,
             pax:pax,
             prize:prize,
-            image:'/images/'+ image,
+            image:'/images/'+ images,
         }
 
 

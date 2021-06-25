@@ -1,27 +1,9 @@
 [
   {
-    "id": 10
+    "id": 12
   },
   {
-    "id": 12,
-    "name": "suit DOME",
-    "destination": "patagonia",
-    "pax": 4,
-    "prize": 25000,
-    "image": "https://www.ecocamp.travel/hubfs/Standard%20Dome%20EcoCamp%20Patagonia%201920x1281_960.webp",
-    "clase": "A"
-  },
-  {
-    "id": 13
-  },
-  {
-    "id": 14,
-    "name": "superior",
-    "destination": "tigre",
-    "pax": 1,
-    "prize": 9000,
-    "image": "https://www.ecocamp.travel/hubfs/Superior%20Dome%20Interior_960.webp",
-    "clase": "B"
+    "id": 14
   },
   {
     "id": 15,

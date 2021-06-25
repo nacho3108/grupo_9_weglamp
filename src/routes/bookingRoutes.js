@@ -42,7 +42,7 @@ bookingRoutes.post('/new',upload.single('image'), bookingControllers.store)
 bookingRoutes.get('/new',bookingControllers.new)
 
 bookingRoutes.get('/edit/:id',bookingControllers.edit)
-bookingRoutes.put('/edit/:id',bookingControllers.update)
+bookingRoutes.put('/edit/:id',upload.single('image'),bookingControllers.update)
 
 bookingRoutes.get('/detalle/:id?', bookingControllers.detalle)
 bookingRoutes.delete('/detalle/:id', bookingControllers.destroy)

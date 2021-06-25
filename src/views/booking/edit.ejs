@@ -21,7 +21,7 @@
                 <a href="/users/register" class="crear">Crear una cuenta</a>
             </section>
 
-            <form action="/booking/edit/<%= product.id %>?_method=PUT" method="POST">
+            <form action="/booking/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                <section class="form">
                 <p></p>
@@ -32,6 +32,8 @@
                 <input type="text" name="pax" id="pax" value="<%= product.pax %>" class="campo_contrasena" placeholder="pax">
                 <p></p>
                 <input type="text" name="prize" id="prize" value="<%= product.prize %>" class="campo_contrasena" placeholder="precio">
+                <p></p>
+                <input type="file" name="image" id="image" value="<%= product.image %>" class="campo_contrasena">
                 <p></p>
                 <!--    <p></p>
                 <label><input type="checkbox" class="mantenerme_logueado">Mantenerme logueado</label>-->

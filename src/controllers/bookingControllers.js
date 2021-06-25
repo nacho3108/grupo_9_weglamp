@@ -48,17 +48,26 @@ const bookingControllers = {
 
     update: (req, res) => {
         const data = req.body;
-        const { file } = req;
+        const { file } = req
+       
         const { id } = req.params;
-        if(file.image == null){
+        let  productOriginal = productosModel.findByPk(id)
+        let image
+
+        if (file) {
+            image = '/images/' + file.filename
+        } else {
+            image = productOriginal.image
+        }
+
+       /* if(typeof file.image !== "undefined"){
             return file.image
         }else{
             return product.image
 
-        }
-            
-        
-   
+        }*/
+
+        data.image = image
         productosModel.update(data, id);
 
         res.redirect('/booking/edit/' + id);

@@ -4,7 +4,12 @@
     "image": "/images/1624585491867.png"
   },
   {
-    "id": 14
+    "id": 14,
+    "destination": "Tigre",
+    "name": "suite",
+    "pax": "4",
+    "prize": "15000",
+    "image": "/images/1624747650239.png"
   },
   {
     "id": 15,

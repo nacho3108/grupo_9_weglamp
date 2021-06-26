@@ -22,7 +22,9 @@ module.exports = {
     },
 
     findByClass(clase){
-        return this.readFile()
+     
+        return this.readFile().filter(filename=>filename.clase == clase)
+ 
     },
 
 

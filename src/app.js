@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+const notFound = require ("./middlewares/notFound")
 
 // Configuración de Express
 const app = express();
@@ -32,3 +33,4 @@ app.listen(3000, () => {
 });
 
 // Falta crear y agregar el 404 acá.
+app.use(notFound)

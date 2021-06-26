@@ -18,20 +18,6 @@ const bookingControllers = {
         const clase =  productosModel.findByClass(clases)
         res.render('booking/productList', {clase})
     },
-
- 
-
-
-    /*productClase :(req,res)=> {
-        const clase = req.params.clase
-        const detalleClase = productosModel.findByPk(clase)
-        res.render('booking/productList',{detalleClase})   
-    },
-
-   /*productByclass :(req,res)=>{
-        const productos = productosModel.findByPk()
-        res.render('booking/productList', {productByclass})
-    },   */
     
 
     new :(req,res)=> {
@@ -60,12 +46,7 @@ const bookingControllers = {
             image = productOriginal.image
         }
 
-       /* if(typeof file.image !== "undefined"){
-            return file.image
-        }else{
-            return product.image
-
-        }*/
+    
 
         data.image = image
         productosModel.update(data, id);

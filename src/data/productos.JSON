@@ -31,12 +31,7 @@
   },
   {
     "id": 17,
-    "name": "superior",
-    "destination": "tigre",
-    "pax": 2,
-    "prize": 14000,
-    "image": "https://www.ecocamp.travel/hubfs/Superior%20Dome%20Interior_960.webp",
-    "clase": "B"
+    "image": "https://www.ecocamp.travel/hubfs/Superior%20Dome%20Interior_960.webp"
   },
   {
     "id": 18,

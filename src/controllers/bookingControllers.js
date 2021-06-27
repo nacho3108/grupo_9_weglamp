@@ -1,6 +1,8 @@
 const path = require('path')
 const productosModel = require('../models/productosModel')
 const multer = require('multer');
+const {validationResult } =require("express-validator");
+
 const bookingControllers = {
  
     productDetail: (req, res) => {
@@ -21,6 +23,10 @@ const bookingControllers = {
     
 
     new :(req,res)=> {
+     /*   let Errores = validationResult(req);
+        if(!Errores.isEmpty){
+            return res.render("formulario ok")
+        }else{mensajedeError : error.mapped()}*/
         res.render('booking/new')   
     },
 
@@ -63,6 +69,13 @@ const bookingControllers = {
     },
 
     store: (req, res) => {
+        const formValidation = validationResult (req)
+        if(!formValidation.isEmpty()){
+            const oldValues = req.body
+            res.render('booking/new',{oldValues, errors: formValidation.mapped()})
+             return
+        }
+        
         const { destination, name, pax, prize} = req.body;
         const { file } = req
         const images = file.filename

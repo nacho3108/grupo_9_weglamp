@@ -2,6 +2,8 @@ const express = require('express');
 const bookingRoutes = express.Router();
 const path = require('path');
 const multer = require('multer');
+const{body}= require("express-validator");
+const validationNewDome = require("../middlewares/validationNewDome")
 // destino donde guardar el archivo
 // nombre del archivo
 const storage = multer.diskStorage({
@@ -38,7 +40,7 @@ bookingRoutes.get('/productList/', bookingControllers.productList)
 bookingRoutes.get('/productList/:clase', bookingControllers.productClase)
 
 
-bookingRoutes.post('/new',upload.single('image'), bookingControllers.store)
+bookingRoutes.post('/new',upload.single('image'),validationNewDome, bookingControllers.store)
 bookingRoutes.get('/new',bookingControllers.new)
 
 bookingRoutes.get('/edit/:id',bookingControllers.edit)

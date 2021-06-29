@@ -42,8 +42,9 @@ const userControllers = {
         const hashPassword = bcrypt.hashSync(contraseña)
 
         const user = {
-           nombre,
-            email,
+            nombre:nombre,
+            apellido:apellido,
+            email:email,
             contraseña: hashPassword,
             image: '/images/users/' + image,
         }
@@ -58,18 +59,6 @@ const userControllers = {
 
 
 
-       /* const { nombre, apellido, email, contraseña, image} = req.body;
-        const hashPassword = bcrypt.hashSync(contraseña, 10)
-        const regist = {
-            nombre:nombre,
-            apellido:apellido,
-            email:email,
-            contraseña:hashPassword,
-            image: image,
-        }
-        registerModel.create(regist)
-        res.redirect('/')
-    },*/
 
 }
 

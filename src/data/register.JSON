@@ -34,5 +34,13 @@
     "contraseña": "$2a$10$p8ILrc0KOX0ullc7mbrPaOsmPUG4xcnRh6MwkHBMqwC7rf/zz/qs2",
     "image": "weglamp.png",
     "id": 4
+  },
+  {
+    "nombre": "carlos",
+    "apellido": "vega",
+    "email": "hove003@gmail.com",
+    "contraseña": "$2a$10$DgzqxCPzF0f.Epvs6uTy4.6MsIxv4OZYIt6USxzKaWvGb3lEWiEKG",
+    "image": "IMG_2662.jpeg",
+    "id": 5
   }
 ]

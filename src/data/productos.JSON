@@ -327,5 +327,37 @@
     "prize": "15000",
     "image": "/images/1624806594376.jpg",
     "id": 55
+  },
+  {
+    "destination": "Lobos",
+    "name": "superior",
+    "pax": "4",
+    "prize": "  4 ",
+    "image": "/images/1624930209427.png",
+    "id": 56
+  },
+  {
+    "destination": "Tigre",
+    "name": "Standart",
+    "pax": "2",
+    "prize": "  4",
+    "image": "/images/1624930236688.png",
+    "id": 57
+  },
+  {
+    "destination": "Lobos",
+    "name": "superior",
+    "pax": "2",
+    "prize": "  4",
+    "image": "/images/1624932283622.png",
+    "id": 58
+  },
+  {
+    "destination": "Patagonia",
+    "name": "Suite",
+    "pax": "3",
+    "prize": "  4",
+    "image": "/images/1624932360546.png",
+    "id": 59
   }
 ]

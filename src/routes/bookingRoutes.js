@@ -2,8 +2,7 @@ const express = require('express');
 const bookingRoutes = express.Router();
 const path = require('path');
 const multer = require('multer');
-const{body}= require("express-validator");
-const validationNewDome = require("../middlewares/validationNewDome")
+
 // destino donde guardar el archivo
 // nombre del archivo
 const storage = multer.diskStorage({
@@ -32,6 +31,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
+
 const bookingControllers = require('../controllers/bookingControllers');
 
 bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail)
@@ -40,8 +40,12 @@ bookingRoutes.get('/productList/', bookingControllers.productList)
 bookingRoutes.get('/productList/:clase', bookingControllers.productClase)
 
 
-bookingRoutes.post('/new',upload.single('image'),validationNewDome, bookingControllers.store)
-bookingRoutes.get('/new',bookingControllers.new)
+
+// Create
+bookingRoutes.get('/new', bookingControllers.new);
+
+// aca deberíamos pasar multer
+bookingRoutes.post('/new', upload.single('image'), bookingControllers.store);
 
 bookingRoutes.get('/edit/:id',bookingControllers.edit)
 bookingRoutes.put('/edit/:id',upload.single('image'),bookingControllers.update)

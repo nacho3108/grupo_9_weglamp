@@ -69,6 +69,28 @@ const bookingControllers = {
     },
 
     store: (req, res) => {
+        // Crear el objeto 
+        const { destination, name, pax, prize } = req.body;
+
+        // dentro de req.file va a venir la información del archivo
+        const { file } = req
+        
+        // nuestra ruta al archivo
+        const image = file.filename
+
+        const product = {
+            destination: destination,
+            name:name,
+            pax:pax,
+            prize:prize,
+            image: '/images/' + image,
+        }
+
+        const productCreated = productosModel.create(product);
+
+        res.redirect('/booking/detalle/' + productCreated.id);
+    },
+    /* store: (req, res) => {
         const formValidation = validationResult (req)
         if(!formValidation.isEmpty()){
             const oldValues = req.body
@@ -91,6 +113,7 @@ const bookingControllers = {
         productosModel.create(product)
         res.redirect('/')
     },
+    */
     destroy: (req, res) => {
         const id = req.params.id;
         

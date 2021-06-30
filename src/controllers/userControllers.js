@@ -31,6 +31,7 @@ const userControllers = {
 
         // Crear el objeto usuario
         const { nombre, apellido, email, contraseña } = req.body;
+        console.log(req.body)
 
         // dentro de req.file va a venir la información del archivo
         const { file } = req
@@ -49,9 +50,9 @@ const userControllers = {
             image: '/images/users/' + image,
         }
         
-        usersModel.create(user);
+        registerModel.create(user);
 
-        res.redirect('/users/login');
+        res.redirect('/user/login');
     },
 
 

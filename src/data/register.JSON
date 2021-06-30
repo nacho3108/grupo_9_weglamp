@@ -42,5 +42,13 @@
     "contraseña": "$2a$10$DgzqxCPzF0f.Epvs6uTy4.6MsIxv4OZYIt6USxzKaWvGb3lEWiEKG",
     "image": "IMG_2662.jpeg",
     "id": 5
+  },
+  {
+    "nombre": "horacio",
+    "apellido": "marks",
+    "email": "veronoca@veronica.com",
+    "contraseña": "$2a$10$T1UcTuuQN/zypGUyf1nG1uOjhON7Xi7.o7YRWxFmTsGrSi0uoVCQa",
+    "image": "/images/users/1625021569835.jpg",
+    "id": 6
   }
 ]

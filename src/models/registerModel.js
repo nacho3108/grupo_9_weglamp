@@ -31,6 +31,15 @@ module.exports = {
        // reescribir el archivo .JSON
        fs.writeFileSync(this.filename, json);
     },
+    findByField(field, value) {
+        const users = this.readFile();
+        // Filtrar por el [field]
+
+        // [] los usamos para que sea dinámica el nombre de la propiedad
+        const userFound = users.find(user => user[field] == value);
+        // Devolvemos el user
+        return userFound;
+    },
     
 
 }

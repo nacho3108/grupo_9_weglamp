@@ -16,7 +16,7 @@ const validationRegisterUser = [
         .withMessage('No es en formato e-mail')
         .bail()
         .custom((email) => {
-            const userFound = userModel.findByField('email', email)
+            const userFound = registerModel.findByField('email', email)
 
             if (userFound) {
                 return false

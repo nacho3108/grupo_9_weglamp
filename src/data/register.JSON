@@ -50,5 +50,21 @@
     "contraseña": "$2a$10$T1UcTuuQN/zypGUyf1nG1uOjhON7Xi7.o7YRWxFmTsGrSi0uoVCQa",
     "image": "/images/users/1625021569835.jpg",
     "id": 6
+  },
+  {
+    "nombre": "catalina",
+    "apellido": "vega",
+    "email": "catalina@catalina.com",
+    "contraseña": "$2a$10$TAp/8ALIHcjTViWI9YDUM.LRJsfvtzmkZksTiBRWGkDaeS7H6H7hO",
+    "image": "/images/users/1625021745157.png",
+    "id": 7
+  },
+  {
+    "nombre": "pepe",
+    "apellido": "gomez",
+    "email": "pepe@gomez.com",
+    "contraseña": "$2a$10$Za3lx7wwc8hljG9MZXD2cusMkuE3FYCCBcCbWQmLguRlTH5nuSHH2",
+    "image": "/images/users/1625104898103.png",
+    "id": 8
   }
 ]

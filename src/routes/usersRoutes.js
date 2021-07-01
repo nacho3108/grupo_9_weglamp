@@ -36,7 +36,7 @@ userRoutes.post("/login",validationLoginUser, userControllers.processLogin)
 userRoutes.get("/register", userControllers.register)
 userRoutes.post("/register",upload.single('image'), validationRegisterUser, userControllers.store)
 
-userRoutes.get('/profile',  userControllers.processLogin)
+userRoutes.get('/profile',  userControllers.profile)
 
 
 module.exports = userRoutes

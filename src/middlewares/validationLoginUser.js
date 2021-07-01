@@ -6,7 +6,7 @@ const validationLoginUser = [
     body('email')
         .notEmpty()
         .withMessage('Por favor ingrese su e-mail')
-    
+        .bail()
         .isEmail()
         .withMessage('No es en formato e-mail'),
     body('contraseña')

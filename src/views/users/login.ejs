@@ -26,7 +26,7 @@
             
                 <form action="/user/login" class="form" method="POST" enctype="multipart/form-data">
                 <p></p>
-                <input type="text" name="email" id="email" placeholder="Usuario o e-mail" class="campo_usuario <%= (locals.errors && errors.email) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.email %>"/>
+                <input type="text" name="email" id="email" placeholder="Usuario o e-mail" class="campo_usuario" value="<%= locals.oldValues && oldValues.email %>"/>
                     
                 <% if (locals.errors && errors.email) { %>
                     <p><%= errors.email.msg %></p>
@@ -38,7 +38,7 @@
                     <p><%= errors.contraseña.msg %></p>
                 <% } %>
                 <p></p>
-                <label><input type="checkbox" class="mantenerme_logueado">Mantenerme logueado</label>
+                <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
                 <p></p>
                 <button type="submit" class="ingresar" value="Ingresar">Ingresar</button>
             </form>

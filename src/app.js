@@ -3,7 +3,12 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
-const notFound = require ("./middlewares/notFound")
+const notFound = require ("./middlewares/notFound");
+const session = require ("express-session");
+const createError = require('http-errors');
+const config = require("./config/config")
+
+
 
 // Configuración de Express
 const app = express();
@@ -14,7 +19,13 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views','./src/views');
+app.use(session({secret:config.sessionSecret}));
 
+const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware');
+const sessionToLocals = require('./middlewares/sessionToLocals');
+
+app.use(cookiesSessionMiddleware)
+app.use(sessionToLocals)
 // Módulos de rutas
 const mainRoutes = require('./routes/mainRoutes');
 const aboutRoutes = require('./routes/aboutRoutes');
@@ -26,6 +37,7 @@ app.use('/', mainRoutes);
 app.use('/about', aboutRoutes);
 app.use('/booking', bookingRoutes);
 app.use('/user', userRoutes);
+
 
 // Ejecución del servidor de Express
 /* app.listen(3000, () => {

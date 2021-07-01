@@ -66,5 +66,29 @@
     "contraseña": "$2a$10$Za3lx7wwc8hljG9MZXD2cusMkuE3FYCCBcCbWQmLguRlTH5nuSHH2",
     "image": "/images/users/1625104898103.png",
     "id": 8
+  },
+  {
+    "nombre": "guadalupe",
+    "apellido": "vega",
+    "email": "guadalupe@gmail.com",
+    "contraseña": "$2a$10$YBPfEObhoF3c1HuvvcJIi.hE2VzxmB/SaJkbqIOsbcJB6XSlpMNjO",
+    "image": "/images/users/1625162348336.png",
+    "id": 9
+  },
+  {
+    "nombre": "pepe",
+    "apellido": "garcia",
+    "email": "pepe@garcia.com",
+    "contraseña": "$2a$10$1Gf7DAanjoBVx.AKBr6fFegdU4VRGiCyxBBiVS/E4LAVkEzE4FxxG",
+    "image": "/images/users/1625165622518.png",
+    "id": 10
+  },
+  {
+    "nombre": "pepe",
+    "apellido": "garcia",
+    "email": "pepe@garciia.com",
+    "contraseña": "$2a$10$bHKDBw/opKzpdfDhpEclXuf44XxP3Q/9LYzPNqJPP18vrr9.CvX/C",
+    "image": "/images/users/1625165926200.jpg",
+    "id": 11
   }
 ]

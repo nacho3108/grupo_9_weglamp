@@ -40,6 +40,20 @@ module.exports = {
         // Devolvemos el user
         return userFound;
     },
+    findAll() {
+        // Leer nuestra informacion
+        const users = this.readFile();
+        // devolver la info
+        return users;
+    },
+    findByPk(id) {
+        const users = this.readFile();
+        // Filtrar por el ID
+        const userFound = users.find(user => user.id == id);
+        // Devolvemos el user
+        return userFound;
+    },
+    
     
 
 }

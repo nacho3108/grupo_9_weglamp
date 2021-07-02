@@ -26,7 +26,7 @@
 
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <input type="text" name="nombre" id="nombre" class="campo_nombre"  placeholder="Nombre"
-                class="<%= (locals.errors && errors.nombre) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.nombre%>"/>
+                class="<%= (locals.errors && errors.nombre) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.nombre %>"/>
                     
                     <% if (locals.errors && errors.nombre) { %>
                         <p><%= errors.nombre.msg %></p>
@@ -35,21 +35,21 @@
 
                 <p></p>
                 <input type="text" name="apellido" id="apellido" class="campo_apellido" placeholder="Apellido"
-                class="<%= (locals.errors && errors.apellido) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.apellido%>"/>
+                class="<%= (locals.errors && errors.apellido) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.apellido %>"/>
                     
                 <% if (locals.errors && errors.apellido) { %>
                     <p><%= errors.apellido.msg %></p>
                 <% } %> 
                 <p></p>
                 <input type="text" name="email" id="email" class="campo_correo"  placeholder="email" 
-                class="<%= (locals.errors && errors.email) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.email%>"/>
+                class="<%= (locals.errors && errors.email) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.email %>"/>
                     
                 <% if (locals.errors && errors.email) { %>
                     <p><%= errors.email.msg %></p>
                 <% } %>
                 <p></p>
                 <input type="text" name="contraseña" id="contraseña" class="campo_contrasena"  placeholder="Contraseña" 
-                class="<%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.contraseña%>"/>
+                class="<%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.contraseña %>"/>
                     
                 <% if (locals.errors && errors.contraseña) { %>
                     <p><%= errors.contraseña.msg %></p>

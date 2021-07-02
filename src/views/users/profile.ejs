@@ -5,7 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <%- include('../partials/head', {title: "profile"}) %> 
+    <link rel="stylesheet"  href="/css/productDetail.css">
 </head>
 <body>
-    BIENVENIDOS!
+    <header>
+        <section class="top-header">
+            <div>
+                 <img src="/images/weglamp.png" width="200">
+            </div>
+            <div> <i class="fas fa-bars"></i></div>
+            <div class="main-header-top-bar">
+                    <h2 class="log-in"><a href="/user/logout">Salir</a></h2>
+                
+                    <h2 class="ayuda"><a href="/ayuda">Ayuda</a></h2>
+                    <h2><a href="/">volver</a></h2>
+                    
+            </div>
+        </section>
+        <div class="main-header-bottom-bar"> 
+            <h3><a href="#">Alojamientos </a></h3>
+            <p></p>
+            <h3><a href="#">Paquetes </a></h3>
+            <p></p>
+            <h3><a href="#">Seguros </a></h3>
+        </div>
+       
+    </header>
+   <h3> BIENVENIDO!
+    <u><%= locals.logged.nombre %> </u></h3>
+    <br/>
+            <img width="80%" src="<%= locals.logged.image %>">
+        </section>
+
 </html>

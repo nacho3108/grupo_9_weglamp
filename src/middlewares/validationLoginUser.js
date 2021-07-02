@@ -21,7 +21,7 @@ const validationLoginUser = [
 
             // chequear que userFound exista
             if (userFound) {
-                return false
+                // return false
                 // comparar contraseñas
                 const passwordMatch = bcrypt.compareSync(contraseña, userFound.contraseña)
 

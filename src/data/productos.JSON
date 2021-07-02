@@ -1,7 +1,11 @@
 [
   {
     "id": 12,
-    "image": "/images/1624585491867.png"
+    "destination": "Tigre",
+    "name": "suite",
+    "pax": "4",
+    "prize": "15000",
+    "image": "/images/1625175750752.jpg"
   },
   {
     "id": 14,

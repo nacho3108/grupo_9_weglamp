@@ -8,8 +8,6 @@ const session = require ("express-session");
 const createError = require('http-errors');
 const config = require("./config/config")
 
-
-
 // Configuración de Express
 const app = express();
 app.use(express.static(path.join(__dirname, '../public')));
@@ -20,12 +18,11 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views','./src/views');
 app.use(session({secret:config.sessionSecret}));
-
 const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware');
 const sessionToLocals = require('./middlewares/sessionToLocals');
+app.use(cookiesSessionMiddleware);
+app.use(sessionToLocals);
 
-app.use(cookiesSessionMiddleware)
-app.use(sessionToLocals)
 // Módulos de rutas
 const mainRoutes = require('./routes/mainRoutes');
 const aboutRoutes = require('./routes/aboutRoutes');
@@ -38,15 +35,10 @@ app.use('/about', aboutRoutes);
 app.use('/booking', bookingRoutes);
 app.use('/user', userRoutes);
 
-
-// Ejecución del servidor de Express
-/* app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000')
-}); */
-//Cambio a Heroku
+// Ejecución del servidor de Express con puerto para Heroku
 app.listen(process.env.PORT || 3000,function(){
     console.log('Servidor corriendo en el puerto 3000')
 });
 
-// Falta crear y agregar el 404 acá.
-app.use(notFound)
+// Error 404
+app.use(notFound);

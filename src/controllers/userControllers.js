@@ -11,48 +11,50 @@ const userControllers = {
         res.render('users/login')
     },
     processLogin: (req, res) => {
-        const formValidation = validationResult(req)
-        const oldValues = req.body
+        const formValidation = validationResult(req);
+        //console.log(formValidation);
+        const oldValues = req.body;
+        console.log(oldValues);
 
         if (!formValidation.isEmpty()) {
             return res.render('users/login', { oldValues, errors: formValidation.mapped() })
         } 
                         
 
-                        // lo que viene del login
-                        const { email, remember} = req.body
-                            
-                        // le pedimos al modelo el usuario
-                        const user = registerModel.findByField('email', email)
-                        //req.session = {}
+        // lo que viene del login
+        const { email, remember} = req.body
+            
+        // le pedimos al modelo el usuario
+        const user = registerModel.findByField('email', email)
+        //req.session = {}
 
-                        // cargamos los datos del usuario en la sesión
-                        
-                        // le sacamos el password
-                        delete user.password
+        // cargamos los datos del usuario en la sesión
+        
+        // le sacamos el password
+        delete user.password
 
-                        // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
-                        req.session.logged = user
+        // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
+        req.session.logged = user
 
-                        // guardamos un dato de nuestro usuario en la sesión (email, user_id)
-                        if (remember) {
-                            // clave
-                            res.cookie('user', user.id, {
-                                maxAge: maxAgeUserCookie,
-                                // pasamos esta propiedad para que firme la cookie
-                                signed: true,    
-                            })
-                        }
+        // guardamos un dato de nuestro usuario en la sesión (email, user_id)
+        if (remember) {
+            // clave
+            res.cookie('user', user.id, {
+                maxAge: maxAgeUserCookie,
+                // pasamos esta propiedad para que firme la cookie
+                signed: true,    
+            })
+        }
 
-                    
-                        // redirigimos al profile
-                        res.redirect('/user/profile')
-                    },
-    register: (req, res) => {
-            res.render('users/register')
-     },
     
-     store: (req, res) => {
+        // redirigimos al profile
+        res.redirect('/user/profile')
+    },
+    register: (req, res) => {
+        res.render('users/register')
+    },
+    
+    store: (req, res) => {
         const formValidation = validationResult(req)
         const oldValues = req.body
         
@@ -96,7 +98,7 @@ const userControllers = {
 
     
     profile: (req, res) => {
-        res.render('user/profile')
+        res.render('users/profile')
     },
 
     logout: (req, res) => {
@@ -106,12 +108,6 @@ const userControllers = {
         
         res.redirect('/')
     },
-  
-
-
-
-
 }
 
 module.exports = userControllers;
-

@@ -31,3 +31,18 @@ Nuestros objetivos para estos próximos días son:
 * Prepararnos para la clase práctica del martes.
 * Rever la vista de detalle.
 * Pushear correcciones de los parciales.
+
+## Reunión 01/07
+
+En estos últimos días...:
+* Se dejó funcionando el registro.
+* Se estuvo trabajando en el login y la sesión.
+* Se agregó el sitio 404.
+* Se arregló un problema que se daba al ejecutar la función DELETE.
+
+¿Hubo impedimentos?:
+* El login aún no está funcionando.
+
+Nuestros objetivos para estos próximos días son:
+* Reparar el login.
+* Probar si la sesión funciona.

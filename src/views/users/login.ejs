@@ -11,60 +11,53 @@
 
 </head>
     <body>
-
         <main>
-        <div class="modal-container" id="modal-container">
-            
-            <div class="modal">
-
-            <section class="izquierda">
-                <h1>Ingresar a mi cuenta</h1>
-            <section class="usuario_crear">
-                <h2 class="nuevo">Usuario nuevo?</h2>
-                <a href="/user/login" class="crear">Crear una cuenta</a>
-            </section>
-            
-                <form action="/user/login" class="form" method="POST" enctype="multipart/form-data">
-                <p></p>
-                <input type="text" name="email" id="email" placeholder="Usuario o e-mail" class="campo_usuario" value="<%= locals.oldValues && oldValues.email %>"/>
-                    
-                <% if (locals.errors && errors.email) { %>
-                    <p><%= errors.email.msg %></p>
-                <% } %> <br>
-                <p></p>
-                <input type="text" name="contraseña" id="contraseña" placeholder="Contraseña" class="campo_contrasena <%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>"  value="<%= locals.oldValues && oldValues.contraseña %>"/>
-                    
-                <% if (locals.errors && errors.contraseña) { %>
-                    <p><%= errors.contraseña.msg %></p>
-                <% } %>
-                <p></p>
-                <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
-                <p></p>
-                <button type="submit" class="ingresar" value="Ingresar">Ingresar</button>
-            </form>
-            
-            <section class="ingreso_alternativo">
-                <hr> <h3> o ingresar con </h3> <hr>
-            </section>
-            <section class="redes">
-                <i class="fab fa-google" class="icon_login"></i>
-                <i class="fab fa-facebook" class="icon_login"></i>
-                <i class="fab fa-linkedin" class="icon_login"></i>
-                <i class="fab fa-twitter-square" class="icon_login"></i>
-            </section>
-            </section>
-
-            <section class="derecha_arriba">
-                <div class="cruz">
-                <a href="/"><i class="far fa-times-circle"></i></a>
+            <div class="modal-container" id="modal-container">
+                <div class="modal">
+                    <section class="izquierda">
+                        <h1>Ingresar a mi cuenta</h1>
+                        <section class="usuario_crear">
+                            <h2 class="nuevo">Usuario nuevo?</h2>
+                            <a href="/user/login" class="crear">Crear una cuenta</a>
+                        </section>
+                        <form action="/user/login" class="form" method="POST">
+                            <p></p>
+                            <input type="text" name="email" id="email" placeholder="Usuario o e-mail" class="campo_usuario" value="<%= locals.oldValues && oldValues.email %>"/>
+                                
+                            <% if (locals.errors && errors.email) { %>
+                                <p><%= errors.email.msg %></p>
+                            <% } %> <br>
+                            <p></p>
+                            <input type="text" name="contraseña" id="contraseña" placeholder="Contraseña" class="campo_contrasena <%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>"  value="<%= locals.oldValues && oldValues.contraseña %>"/>
+                                
+                            <% if (locals.errors && errors.contraseña) { %>
+                                <p><%= errors.contraseña.msg %></p>
+                            <% } %>
+                            <p></p>
+                            <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
+                            <p></p>
+                            <button type="submit" class="ingresar" value="Ingresar">Ingresar</button>
+                        </form>
+                        <section class="ingreso_alternativo">
+                            <hr> <h3> o ingresar con </h3> <hr>
+                        </section>
+                        <section class="redes">
+                            <i class="fab fa-google" class="icon_login"></i>
+                            <i class="fab fa-facebook" class="icon_login"></i>
+                            <i class="fab fa-linkedin" class="icon_login"></i>
+                            <i class="fab fa-twitter-square" class="icon_login"></i>
+                        </section>
+                    </section>
+                    <section class="derecha_arriba">
+                        <div class="cruz">
+                        <a href="/"><i class="far fa-times-circle"></i></a>
+                        </div>
+                    </section>
+                    <section class="derecho_abajo">
+                        <img src="/images/weglamp-vert.png" alt="foto" class="imagen">
+                    </section>
                 </div>
-            </section>
-
-            <section class="derecho_abajo">
-                <img src="/images/weglamp-vert.png" alt="foto" class="imagen">
-            </section>
-        </div>
+            </div>
         </main>
     </body>
-
 </html>

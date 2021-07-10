@@ -32,10 +32,12 @@
         </div>
        
     </header>
-   <h3> BIENVENIDO!
+    <div class="profileContainer">
+   <h3 class ="profile"> BIENVENIDO!<br/>
     <u><%= locals.logged.email %> </u></h3>
+    
     <br/>
-            <img width="80%" src="<%= locals.logged.image %>">
-        </section>
-
+            <img class="image" width="100%" src="<%= locals.logged.image %>">
+        </div></section>
+        <footer> <%- include('../partials/footer') %></footer>
 </html>

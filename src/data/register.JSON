@@ -90,5 +90,13 @@
     "contraseña": "$2a$10$bHKDBw/opKzpdfDhpEclXuf44XxP3Q/9LYzPNqJPP18vrr9.CvX/C",
     "image": "/images/users/1625165926200.jpg",
     "id": 11
+  },
+  {
+    "nombre": "lorena",
+    "apellido": "luna",
+    "email": "lorenavluna@lorena.com",
+    "contraseña": "$2a$10$aCbIm..m2K.iFU5yCNRwe.iqVOkTygUD0aSuvL7chOqAXoo7cZUAe",
+    "image": "/images/users/1625786719032.jpeg",
+    "id": 12
   }
 ]

@@ -46,3 +46,16 @@ En estos últimos días...:
 Nuestros objetivos para estos próximos días son:
 * Reparar el login.
 * Probar si la sesión funciona.
+
+## Reunión 15/07
+
+(Hubo un par de reuniones anteriores pero las utilizamos mayormente para trabajar en actividades)
+
+En estos últimos días...:
+* Se terminaron de generar los middlewares de validaciones y quedó funcionando la sesión.
+
+¿Hubo impedimentos?:
+* Las cookies están implementadas, pero aún no estan funcionando.
+
+Nuestros objetivos para estos próximos días son:
+* Preparar las bases para el próximo sprint.

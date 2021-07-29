@@ -1,6 +1,5 @@
-const { body } = require('express-validator')
-const registerModel = require('../models/registerModel')
-
+const { body } = require('express-validator');
+const registerModel = require('../models/registerModel');
 
 const validationRegisterUser = [
     body('nombre')
@@ -38,9 +37,17 @@ const validationRegisterUser = [
                 throw new Error('Por favor ingrese una imagen')
             }
 
-            
             return true
         })
-]
+        .custom((value, {req}) => {
+            // Revisa el mimetype del archivo en lugar de sólo la extensión. Es más seguro porque previene que se cargue un archivo de otra extensión con el nombre alterado.
+            // Más info acá: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+            if (req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/png"){
+                return true;
+            } else {
+                throw new Error("Por favor ingrese un archivo de formato JPG o PNG.");
+            }
+        })
+];
 
-module.exports = validationRegisterUser
+module.exports = validationRegisterUser;

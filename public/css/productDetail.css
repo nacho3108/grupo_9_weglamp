@@ -148,7 +148,13 @@ nav.sindecidir{
 }
 div.card-body h3{
     font-size: 10px;
+    
 }
+div.card-body{
+    background-color: #d3d0d0;
+    color:#212529;
+}
+
 a.a{
     margin: 18px;
     padding: 5px; 
@@ -327,6 +333,7 @@ section.bottom-footer{
     text-align: center;
     display: flex;
     justify-content: center;
+   
 }
     .suscribirme{
         margin:auto; 
@@ -348,6 +355,19 @@ div.profileContainer{
     color:#212529 ;
     text-align: center !important
 }
+
+div.card-deck{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    max-width: 500px;
+    height: auto;
+    justify-content: center;
+}
+div.card-footer{
+    background-color: whitesmoke;
+}
 .image{
     display: block;
   margin-left: auto;
@@ -357,9 +377,11 @@ div.profileContainer{
     height: auto;
     justify-content: center;
 }
+
+
 h3.profile{
     padding : 25px;
-    margin-left: 55px;
+    
     
 }
 u{

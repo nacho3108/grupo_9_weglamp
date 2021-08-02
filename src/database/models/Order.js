@@ -13,8 +13,8 @@ module.exports = (sequelize, dataTypes) => {
         };
     let config ={
         tableName :"Orders",
-        timeStamps : false,
+        timestamps : false,
     };
-    const Order = sequelize.define(alias, cols, config);
-    return Order;
+    const OrderModel = sequelize.define(alias, cols, config);
+    return OrderModel;
 }

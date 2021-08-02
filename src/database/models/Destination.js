@@ -14,8 +14,8 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName :"Destinations",
-        timeStamps : false,
+        timestamps : false,
     };
-    const Destination = sequelize.define(alias, cols, config);
-    return Destination;
+    const DestinationModel = sequelize.define(alias, cols, config);
+    return DestinationModel;
 }

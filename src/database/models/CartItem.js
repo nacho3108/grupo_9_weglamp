@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias ="CartItems";
+    let alias ="CartItem";
     let cols ={
         id : {
             autoIncrement : true,
@@ -29,11 +29,11 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config ={
         tableName :"cartItems",
-        timeStamps : false,
-        underscored : true
+        timestamps : false,
+        underscored : true,
     };
     
-    const CartItem = sequelize.define(alias, cols, config);
+    const CartItemModel = sequelize.define(alias, cols, config);
     
-    return CartItem;
+    return CartItemModel;
 }

@@ -13,8 +13,8 @@ module.exports = (sequelize, dataTypes) => {
         };
     let config ={
         tableName :"Classes",
-        timeStamps : false,
+        timestamps : false,
     };
-    const Class = sequelize.define(alias, cols, config);
-    return Class;
+    const ClassModel = sequelize.define(alias, cols, config);
+    return ClassModel;
 }

@@ -33,14 +33,14 @@ module.exports = (sequelize, dataTypes) => {
         },
         price : {
                  allowNull :false,
-                type: dataTypes.DECEMAL
+                type: dataTypes.INTEGER
         },
         };
     let config ={
         tableName :"Domes",
-        timeStamps : false,
+        timestamps : false,
         underscored : true
     };
-    const Dome = sequelize.define(alias, cols, config);
-    return Dome;
+    const DomeModel = sequelize.define(alias, cols, config);
+    return DomeModel;
 }

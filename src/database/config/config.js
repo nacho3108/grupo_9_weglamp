@@ -5,7 +5,7 @@ module.exports = {
     "database": "weglamp",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port":"3000"
+    "port":"3306"
   },
   "test": {
     "username": "root",

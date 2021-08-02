@@ -2,6 +2,7 @@ const path = require('path')
 const productosModel = require('../models/productosModel')
 const multer = require('multer');
 const {validationResult } =require("express-validator");
+const db = require("../database/models")
 
 const bookingControllers = {
  
@@ -10,8 +11,14 @@ const bookingControllers = {
     },
 
     productList: (req, res) => {
-        const productos =  productosModel.findAll()
-        res.render('booking/productList', {productos})
+       
+        db.Dome.findAll()
+       
+    
+        .then(Domes => {
+            res.render('booking/productList', {productos : Domes })
+        })
+        
     },
 
 
@@ -64,9 +71,12 @@ const bookingControllers = {
 
     detalle :(req,res)=> {
         const id = req.params.id
-        const detalleProductos = productosModel.findByPk(id)
-        res.render('booking/detalle',{detalleProductos})   
-    },
+        db.Dome.findByPk(id)
+            .then(detalleProductos => {
+        res.render('booking/detalle',{detalleProductos})
+          
+    })
+},
 
     store: (req, res) => {
         // Crear el objeto 

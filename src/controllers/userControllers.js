@@ -4,7 +4,7 @@ const registerModel = require('../models/registerModel')
 const bcrypt = require('bcryptjs')
 const { validationResult } = require('express-validator')
 const { maxAgeUserCookie } = require('../config/config')
-
+const db = require("../database/models")
 
 const userControllers = {
     login: (req, res) => {

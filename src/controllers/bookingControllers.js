@@ -38,19 +38,24 @@ const bookingControllers = {
     },
 
     edit :(req,res)=> {
-        const product = productosModel.findByPk(req.params.id);
-        res.render('booking/edit', {
-            product
-        }); 
+        db.Dome.findByPk(req.params.id)
+        .then(dome =>{
+          res.render('booking/edit', {
+            dome 
+        });
+        
+        })
     },
 
 
-    update: (req, res) => {
+    update:(req, res) => {
         const data = req.body;
-        const { file } = req
+       
        
         const { id } = req.params;
-        let  productOriginal = productosModel.findByPk(id)
+        db.Dome.findByPk(id)
+        .then(productOriginal => {
+             const { file } = req
         let image
 
         if (file) {
@@ -62,9 +67,15 @@ const bookingControllers = {
     
 
         data.image = image
-        productosModel.update(data, id);
-
+       db.Dome.update(data,{ 
+           where :{
+               id:id
+           }
+       });
+        /* falta in then aca?*/
         res.redirect('/booking/edit/' + id);
+    })
+        
     },
 
 
@@ -119,9 +130,14 @@ const bookingControllers = {
     destroy: (req, res) => {
         const id = req.params.id;
         
-       productosModel.destroy(id);
+       db.Dome.destroy({
+           where: {id}
+    })
+    .then(()=>{
+      res.redirect('/booking/productList');  
+    })
 
-        res.redirect('/booking/productList');
+        
     }
 
 }

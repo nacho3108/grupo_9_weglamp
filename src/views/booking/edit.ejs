@@ -22,19 +22,19 @@
                 <a href="/users/register" class="crear">Crear una cuenta</a>
             </section>
 
-            <form action="/booking/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/booking/edit/<%= dome.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                <section class="form">
                 <p></p>
-                <input type="text" name="destination" id="destination"  value="<%= product.destination %>" class="campo_usuario" placeholder="Ubicacion"><br>
+                <input type="text" name="destination" id="destination"  value="<%= dome.destination %>" class="campo_usuario" placeholder="Ubicacion"><br>
                 <p></p>
-                <input type="text" name="name" id="name" value="<%= product.name %>" class="campo_contrasena" placeholder="tipo de domo">
+                <input type="text" name="name" id="name" value="<%= dome.name %>" class="campo_contrasena" placeholder="tipo de domo">
                 <p></p>
-                <input type="text" name="pax" id="pax" value="<%= product.pax %>" class="campo_contrasena" placeholder="pax">
+                <input type="text" name="pax" id="pax" value="<%= dome.pax %>" class="campo_contrasena" placeholder="pax">
                 <p></p>
-                <input type="text" name="prize" id="prize" value="<%= product.prize %>" class="campo_contrasena" placeholder="precio">
+                <input type="text" name="prize" id="prize" value="<%= dome.prize %>" class="campo_contrasena" placeholder="precio">
                 <p></p>
-                <input type="file" name="image" id="image" value="<%= product.image %>" class="campo_contrasena">
+                <input type="file" name="image" id="image" value="<%= dome.image %>" class="campo_contrasena">
                 <p></p>
                 <!--    <p></p>
                 <label><input type="checkbox" class="mantenerme_logueado">Mantenerme logueado</label>-->

@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         destinationId : {
            
-                allowNull :false,
+               /* allowNull :false,*/
                 type: dataTypes.BOOLEAN
             
         },
@@ -24,15 +24,15 @@ module.exports = (sequelize, dataTypes) => {
                  type: dataTypes.STRING
         },
         classId : {
-                 allowNull :false,
+                 /*allowNull :false,*/
                 type: dataTypes.BOOLEAN
         },
         ownerId : {
-                 allowNull :false,
+                 /*allowNull :false,*/
                 type: dataTypes.STRING
         },
         price : {
-                 allowNull :false,
+                /* allowNull :false,*/
                 type: dataTypes.INTEGER
         },
         };

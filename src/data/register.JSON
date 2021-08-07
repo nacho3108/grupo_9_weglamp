@@ -106,5 +106,13 @@
     "contraseña": "$2a$10$uZL4GgB05DwAPyE13PRsB.sjqq1FgqN4cCE1hXU374hPmllq67O9W",
     "image": "/images/users/1626410825476.jpg",
     "id": 13
+  },
+  {
+    "nombre": "alfonso",
+    "apellido": "PASTOR",
+    "email": "a@hotmail.com",
+    "contraseña": "$2a$10$.gptyRg1peS9OZhKQw4tJuuhETdc6MzB4480FElajXzb35SB2DLkO",
+    "image": "/images/users/1628279179377.JPG",
+    "id": 14
   }
 ]

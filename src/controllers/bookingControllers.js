@@ -96,34 +96,26 @@ const bookingControllers = {
             image: '/images/' + image,
         }
 
-        const productCreated = productosModel.create(product);
-
-        res.redirect('/booking/detalle/' + productCreated.id);
-    },
-    /* store: (req, res) => {
-        const formValidation = validationResult (req)
-        if(!formValidation.isEmpty()){
-            const oldValues = req.body
-            res.render('booking/new',{oldValues, errors: formValidation.mapped()})
-             return
-        }
+        /*const productCreated = productosModel.create(product);*/
+        db.Dome.create({
+           
+            name:req.body.name ,          
+            destinationId:req.body.destinationId,
+            pax: req.body.pax,
+            image:req.body.image,
+            classId:req.body.classId,
+            ownerId:req.body.ownerId,
+            price:req.body.price
+        })
+        .then(newProduct => {
+             res.redirect('/booking/detalle/' + newProduct.id);
+        })
+           
         
-        const { destination, name, pax, prize} = req.body;
-        const { file } = req
-        const images = file.filename
-        const product = {
-            destination: destination,
-            name:name,
-            pax:pax,
-            prize:prize,
-            image:'/images/'+ images,
-        }
-
-
-        productosModel.create(product)
-        res.redirect('/')
+        
     },
-    */
+
+   
     destroy: (req, res) => {
         const id = req.params.id;
         

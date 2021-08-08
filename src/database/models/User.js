@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         },
         name :{
-            allowNull :false,
+           /* allowNull :false,*/
             type: dataTypes.STRING
         },
         surname :{
-            allowNull :false,
+           /* allowNull :false,*/
             type: dataTypes.STRING
         },
         email : {
@@ -19,14 +19,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         password :{
-            allowNull :false,
+           /* allowNull :false,*/
             type: dataTypes.STRING
         },
         avatar:{
             type: dataTypes.STRING
         },
         roleId :{
-            allowNull :false,
+           /* allowNull :false,*/
             type: dataTypes.BOOLEAN
         }
         };

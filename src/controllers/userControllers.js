@@ -4,7 +4,7 @@ const registerModel = require('../models/registerModel')
 const bcrypt = require('bcryptjs')
 const { validationResult } = require('express-validator')
 const { maxAgeUserCookie } = require('../config/config')
-const db = require("../database/models")
+const {User}= require("../database/models")
 
 const userControllers = {
     login: (req, res) => {
@@ -23,30 +23,32 @@ const userControllers = {
         const { email, remember} = req.body
             
         // le pedimos al modelo el usuario
-        const user = registerModel.findByField('email', email)
-        //req.session = {}
-
-        // cargamos los datos del usuario en la sesión
-        
+        User.findOne({
+            where :{
+                email
+            }
+        })
+        .then((user)=>{
         // le sacamos el password
-        delete user.password
+         delete user.password
 
-        // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
-        req.session.logged = user
+         // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
+         req.session.logged = user
 
-        // guardamos un dato de nuestro usuario en la sesión (email, user_id)
+         // guardamos un dato de nuestro usuario en la sesión (email, user_id)
         if (remember) {
-            // clave
-            res.cookie('user', user.id, {
-                maxAge: maxAgeUserCookie,
-                // pasamos esta propiedad para que firme la cookie
-                signed: true,    
-            })
-        }
+                    // clave
+         res.cookie('user', user.id, {
+             maxAge: maxAgeUserCookie,
+            // pasamos esta propiedad para que firme la cookie
+            signed: true,    
+                    })
+                }
 
-    
-        // redirigimos al profile
-        res.redirect('/user/profile')
+                res.redirect('/user/profile')
+        })
+        
+      
     },
     register: (req, res) => {
         res.render('users/register')
@@ -89,9 +91,12 @@ const userControllers = {
             image: '/images/users/' + image,
         }
         
-        registerModel.create(user);
+        User.create(user)
+        .then(()=>{
+         res.redirect('/user/login');   
+        })
 
-        res.redirect('/user/login');
+        
     },
 
     

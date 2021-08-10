@@ -1,11 +1,12 @@
 const { body } = require('express-validator');
 const registerModel = require('../models/registerModel');
+const db = require("../database/models");
 
 const validationRegisterUser = [
     body('nombre')
         .notEmpty()
         .withMessage('Por favor ingrese su nombre'),
-        body('apellido')
+    body('apellido')
         .notEmpty()
         .withMessage('Por favor ingrese su apellido'),
     body('email')
@@ -15,15 +16,17 @@ const validationRegisterUser = [
         .withMessage('No es en formato e-mail')
         .bail()
         .custom((email) => {
-            const userFound = registerModel.findByField('email', email)
-
-            if (userFound) {
-                return false
+            const userFound = db.User.findOne({
+                where :{email}
+            })
+        .then((userFound)=>{
+                 if (userFound) {
+                    return Promise.reject('El usuario o la contraseña son inválidas');
             }
-
             return true
-        })
-        .withMessage('El usuario ya existe'),
+            })
+        }),
+        
     body('contraseña')
         .notEmpty()
         .withMessage('Por favor ingrese su contraseña'),

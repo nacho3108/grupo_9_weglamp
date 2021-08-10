@@ -12,7 +12,7 @@ const userControllers = {
     },
     processLogin: (req, res) => {
         const formValidation = validationResult(req);
-        //console.log(formValidation);
+
         const oldValues = req.body;
         console.log(oldValues);
 
@@ -30,7 +30,7 @@ const userControllers = {
         })
         .then((user)=>{
         // le sacamos el password
-         delete user.password
+         delete user.contraseña
 
          // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
          req.session.logged = user

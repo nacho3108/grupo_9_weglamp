@@ -1,7 +1,7 @@
 const { body } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const registerModel = require('../models/registerModel')
-const {User}= require("../database/models")
+const db = require("../database/models")
 
 const validationLoginUser = [
     body('email')
@@ -18,7 +18,7 @@ const validationLoginUser = [
             const { email, contraseña } = req.body
             
             // encontrar un usuario con el email
-            User.findOne({
+            const userFound = db.User.findOne({
                 where :{
                     email
                 }

@@ -1,4 +1,5 @@
 const registerModel = require('../models/registerModel')
+
 module.exports = (req, res, next) => {
     // chequeamos si existe cookie
     // Si existe buscamos en el modelo el usuario

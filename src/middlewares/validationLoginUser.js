@@ -14,19 +14,17 @@ const validationLoginUser = [
         .notEmpty()
         .withMessage('Por favor ingrese su contraseña')
         .bail()
-        .custom((value, { req }) => {
-            const { email, contraseña } = req.body
-            
+        .custom(async (value, { req }) => {
+            const { email, contraseña } = req.body  
             // encontrar un usuario con el email
-            const userFound = db.User.findOne({
+            const userFound= await db.User.findOne({
                 where :{
                     email
                 }
             })
-            .then((userFound)=>{
+            
              // chequear que userFound exista
             if (userFound) {
-                // return false
                 // comparar contraseñas
                 const passwordMatch = bcrypt.compareSync(contraseña, userFound.contraseña)
 
@@ -39,9 +37,7 @@ const validationLoginUser = [
                 return Promise.reject('El usuario o la contraseña son inválidas');
 
             }
-            });
 
-            
         })
        
 ]

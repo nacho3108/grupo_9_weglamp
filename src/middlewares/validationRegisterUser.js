@@ -15,19 +15,16 @@ const validationRegisterUser = [
         .isEmail()
         .withMessage('No es en formato e-mail')
         .bail()
-        .custom((email) => {
-            const userFound = db.User.findOne({
-                where :{email}
-            })
-        .then((userFound)=>{
-                 if (userFound) {
-                    return Promise.reject('El usuario o la contraseña son inválidas');
+        .custom(async (email) => {
+            const userFound = await db.User.findOne({
+                where: { email }
+            });
+            if (userFound) {
+                return Promise.reject('El usuario o la contraseña son inválidas');
             }
-            return true
-            })
+            return true;
         }),
-        
-    body('contraseña')
+    body('password')
         .notEmpty()
         .withMessage('Por favor ingrese su contraseña'),
     body('image')

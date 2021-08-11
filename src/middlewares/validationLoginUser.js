@@ -10,40 +10,30 @@ const validationLoginUser = [
         .bail()
         .isEmail()
         .withMessage('No es en formato e-mail'),
-    body('contraseña')
+    body('password')
         .notEmpty()
         .withMessage('Por favor ingrese su contraseña')
         .bail()
-        .custom((value, { req }) => {
-            const { email, contraseña } = req.body
-            
+        .custom(async (value, { req }) => {
+            const { email, password } = req.body;
             // encontrar un usuario con el email
-            const userFound = db.User.findOne({
-                where :{
+            const userFound = await db.User.findOne({
+                where: {
                     email
                 }
-            })
-            .then((userFound)=>{
-             // chequear que userFound exista
+            });
+            // chequear que userFound exista
             if (userFound) {
-                // return false
                 // comparar contraseñas
-                const passwordMatch = bcrypt.compareSync(contraseña, userFound.contraseña)
-
+                const passwordMatch = bcrypt.compareSync(password, userFound.password);
                 if (!passwordMatch) {
                     return Promise.reject('El usuario o la contraseña son inválidas');
-                    
                 }
                 return true
-            }else {
+            } else {
                 return Promise.reject('El usuario o la contraseña son inválidas');
-
             }
-            });
-
-            
         })
-       
 ]
 
 module.exports = validationLoginUser

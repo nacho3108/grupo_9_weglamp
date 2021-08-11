@@ -30,7 +30,7 @@ const userControllers = {
         })
         .then((user)=>{
         // le sacamos el password
-         delete user.contraseña
+         delete user.password
 
          // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
          req.session.logged = user
@@ -71,7 +71,7 @@ const userControllers = {
         } 
 
         // Crear el objeto usuario
-        const { nombre, apellido, email, contraseña } = req.body;
+        const { nombre, apellido, email, password } = req.body;
         console.log(req.body)
 
         // dentro de req.file va a venir la información del archivo
@@ -81,13 +81,13 @@ const userControllers = {
         const image = file.filename
 
         // hashear el password
-        const hashPassword = bcrypt.hashSync(contraseña)
+        const hashPassword = bcrypt.hashSync(password)
 
         const user = {
             nombre:nombre,
             apellido:apellido,
             email:email,
-            contraseña: hashPassword,
+            password: hashPassword,
             image: '/images/users/' + image,
         }
         

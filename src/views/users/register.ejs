@@ -34,6 +34,9 @@
                  
 
                 <p></p>
+
+                <div class="msg-error-name"></div>
+
                 <input type="text" name="apellido" id="apellido" class="campo_apellido" placeholder="Apellido"
                 class="<%= (locals.errors && errors.apellido) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.apellido %>"/>
                     
@@ -41,6 +44,9 @@
                     <p><%= errors.apellido.msg %></p>
                 <% } %> 
                 <p></p>
+
+                <div class="msg-error-surname"></div>
+
                 <input type="text" name="email" id="email" class="campo_correo"  placeholder="email" 
                 class="<%= (locals.errors && errors.email) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.email %>"/>
                     
@@ -48,13 +54,19 @@
                     <p><%= errors.email.msg %></p>
                 <% } %>
                 <p></p>
-                <input type="text" name="contraseña" id="contraseña" class="campo_contrasena"  placeholder="Contraseña" 
-                class="<%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.contraseña %>"/>
+
+                <div class="msg-error-email"></div>
+
+                <input type="text" name="password" id="password" class="campo_contrasena"  placeholder="Contraseña" 
+                class="<%= (locals.errors && errors.password) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.password %>"/>
                     
-                <% if (locals.errors && errors.contraseña) { %>
-                    <p><%= errors.contraseña.msg %></p>
+                <% if (locals.errors && errors.password) { %>
+                    <p><%= errors.password.msg %></p>
                 <% } %>
                 <p></p>
+
+                <div class="msg-error-password"></div>
+
                 <input type="file" name="image" id="image" value="image" class="campo_contrasena" />
                 <div>
                   
@@ -64,6 +76,9 @@
 
                 </div>
                 <p></p>
+
+                <div class="msg-error-image"></div>
+
                 <button type="submit" class="ingresar" value="Registrar Domo"> Registrar </button> 
                 <p></p>
                  <label><input type="checkbox" class="mantenerme_logueado"> Mantenerme logueado</label>

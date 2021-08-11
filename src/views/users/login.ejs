@@ -28,10 +28,10 @@
                                 <p><%= errors.email.msg %></p>
                             <% } %> <br>
                             <p></p>
-                            <input type="text" name="contraseña" id="contraseña" placeholder="Contraseña" class="campo_contrasena <%= (locals.errors && errors.contraseña) ? 'input-error' : '' %>"  value="<%= locals.oldValues && oldValues.contraseña %>"/>
+                            <input type="text" name="password" id="password" placeholder="Contraseña" class="campo_contrasena <%= (locals.errors && errors.password) ? 'input-error' : '' %>"  value="<%= locals.oldValues && oldValues.password %>"/>
                                 
-                            <% if (locals.errors && errors.contraseña) { %>
-                                <p><%= errors.contraseña.msg %></p>
+                            <% if (locals.errors && errors.password) { %>
+                                <p><%= errors.password.msg %></p>
                             <% } %>
                             <p></p>
                             <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>

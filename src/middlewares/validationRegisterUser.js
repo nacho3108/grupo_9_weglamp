@@ -2,13 +2,18 @@ const { body } = require('express-validator');
 const registerModel = require('../models/registerModel');
 const db = require("../database/models");
 
+
 const validationRegisterUser = [
     body('nombre')
         .notEmpty()
-        .withMessage('Por favor ingrese su nombre'),
+        .withMessage('Por favor ingrese su nombre')
+        .isLength({ min: 2, max:15 })
+        .withMessage('Por favor ingrese mas de 2 caracteres'),
     body('apellido')
         .notEmpty()
-        .withMessage('Por favor ingrese su apellido'),
+        .withMessage('Por favor ingrese su apellido')
+        .isLength({ min: 2, max:15 })
+        .withMessage('Por favor ingrese mas de 2 caracteres'),
     body('email')
         .notEmpty()
         .withMessage('Por favor ingrese su e-mail')
@@ -26,8 +31,15 @@ const validationRegisterUser = [
         }),
     body('password')
         .notEmpty()
-        .withMessage('Por favor ingrese su contraseña'),
-    body('image')
+        .withMessage('Por favor ingrese su contraseña')
+        .isLength({ min: 8, max:25 })
+        .withMessage('Por favor ingrese mas de 8 caracteres')
+        .matches('[0-9]').withMessage('La contraseña debe contener como minimo un numero')
+        .matches('[A-Z]').withMessage('La contraseña debe contener como minimo una mayuscula')
+        .matches(
+            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/,
+          ).withMessage('La contraseña debe contener como minimo una simbolo'),
+         body('image')
         .custom((value, { req }) => {
             const { file } = req
 

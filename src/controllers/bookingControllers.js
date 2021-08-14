@@ -85,7 +85,7 @@ const bookingControllers = {
 
     detalle :(req,res)=> {
         const id = req.params.id
-        db.Dome.findByPk(id)
+        db.Dome.findByPk(id, {include:["destination"]})
             .then(detalleProductos => {
         res.render('booking/detalle',{detalleProductos})
           

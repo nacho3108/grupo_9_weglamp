@@ -42,5 +42,12 @@ module.exports = (sequelize, dataTypes) => {
         underscored : true
     };
     const DomeModel = sequelize.define(alias, cols, config);
+    DomeModel.associate = models => {
+        DomeModel.belongsTo(models.Destination, {
+            as: "destination",
+            foreignKey: "destinationId"
+        });
+    }
+
     return DomeModel;
 }

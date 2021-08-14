@@ -9,6 +9,9 @@ const bookingControllers = {
     productDetail: (req, res) => {
         res.render('booking/productDetail')
     },
+    cartItem: (req, res) => {
+        res.render('booking/cartItem')
+    },
 
     productList: (req, res) => {
        

@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         destinationId : {
            
                /* allowNull :false,*/
-                type: dataTypes.BOOLEAN
+                type: dataTypes.STRING
             
         },
         pax : {

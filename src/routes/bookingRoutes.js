@@ -35,7 +35,7 @@ const upload = multer({ storage })
 const bookingControllers = require('../controllers/bookingControllers');
 
 bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail)
-
+bookingRoutes.get('/cartItem/', bookingControllers.cartItem)
 bookingRoutes.get('/productList/', bookingControllers.productList)
 bookingRoutes.get('/productList/:clase', bookingControllers.productClase)
 

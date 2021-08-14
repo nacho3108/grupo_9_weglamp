@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart </title>
+      <%- include('../partials/head', {title: "Detalle de producto"}) %>
+    <link rel="stylesheet" href="/css/productDetail.css">
+    </head>
+    <body>
+        <header>
+          <section class="top-header">
+            <div>
+                 <img src="/images/weglamp.png" width="200">
+             </div>
+             <div> <a href="/"><i class="fas fa-bars"></i></a>
+                    
+             </div>
+             <div class="main-header-top-bar">
+                     <h2 class="log-in">
+                           <a href="/user/login">Iniciar Sesion</a> </h2>
+                     <h2 class="ayuda">
+                             <a href="/">volver</a></h2>
+                     <h2 class="ayuda">
+                              <a href="/booking/cartItem">Carrito</a></h2>
+            </div>
+        </header>
+    
+        <article class="yourStay">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 29rem;">
+              <div class="card-header">Tu Carrito</div>
+              <div class="card-body">
+                <h5 class="card-title">tu reserva </h5>
+                <p class="card-text"><h3>Destino</h3>
+                      <h3>check in date + Horario 15hs</h3>
+                      <h3>check out date + Horario 12hs</h3>
+                      <h3>Total de pax</h3>
+                      <h3>Total $$</h3>
+                      <a class="a" href="#">Reservar</a>
+                      <div class="textodescriptivo">
+                          <p>Formas de pago</p>
+                          <p><i class="fab fa-cc-visa"></i>Visa</p>
+                          <p><i class="fab fa-cc-amex"></i>American Express</p>
+                          <p><i class="fab fa-cc-mastercard"></i>Masterard</p>
+                          
+              </div>
+        </article>
+     <footer> <%- include('../partials/footer') %></footer>
+    </body>
+</head>
+    
+</body>
+</html>

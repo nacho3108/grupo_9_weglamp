@@ -35,10 +35,10 @@ const validationRegisterUser = [
         .isLength({ min: 8, max:25 })
         .withMessage('Por favor ingrese mas de 8 caracteres')
         .matches('[0-9]').withMessage('La contraseña debe contener como minimo un numero')
-        .matches('[A-Z]').withMessage('La contraseña debe contener como minimo una mayuscula')
-        .matches(
-            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/,
-          ).withMessage('La contraseña debe contener como minimo una simbolo'),
+        .matches('[A-Z]').withMessage('La contraseña debe contener como minimo una mayuscula'),
+        /*.matches(
+            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/
+          ).withMessage('La contraseña debe contener como minimo un simbolo'),*/
          body('image')
         .custom((value, { req }) => {
             const { file } = req

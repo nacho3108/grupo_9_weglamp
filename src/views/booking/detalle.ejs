@@ -19,6 +19,8 @@
                        <a href="/user/login">Iniciar Sesion</a> </h2>
                  <h2 class="ayuda">
                          <a href="/">volver</a></h2>
+                         <h2 class="ayuda">
+                          <a href="/booking/cartItem">Carrito</a></h2>
         </div>
     </header>
  <section class="detalle">
@@ -26,8 +28,8 @@
       <img src="<%= detalleProductos.image %>" alt="">
         <div class="card-header">Nombre: DOMO <%= detalleProductos.name %> </div>
         <div class="card-body">
-          <h5 class="card-title">Destino: <%= detalleProductos.destination %></h5>
-          <p class="card-text"><h2>Precio: ARS<%= detalleProductos.prize %></h2>
+          <h5 class="card-title">Destino: <%= detalleProductos.destinationId %></h5>
+          <p class="card-text"><h2>Precio: ARS<%= detalleProductos.price %></h2>
             <br>
            <H2>Cantidad de pasajeros permitidos: <%= detalleProductos.pax %></H2> </p>
            

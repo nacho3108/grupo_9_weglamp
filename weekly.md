@@ -59,3 +59,4 @@ En estos últimos días...:
 
 Nuestros objetivos para estos próximos días son:
 * Preparar las bases para el próximo sprint.
+

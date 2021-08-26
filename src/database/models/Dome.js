@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         destinationId : {
            
-               /* allowNull :false,*/
+                allowNull :false,
                 type: dataTypes.STRING
             
         },
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.STRING
         },
         price : {
-                /* allowNull :false,*/
+                allowNull :false,
                 type: dataTypes.INTEGER
         },
         };

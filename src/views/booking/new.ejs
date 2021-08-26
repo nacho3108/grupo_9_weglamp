@@ -25,23 +25,23 @@
             <form action="/booking/new" method="POST" enctype="multipart/form-data">
                 <select name="destination" id="destination" class="campo_ubicacion"  placeholder="Ubicacion" >
                    
-                    <option value="">Ubicacion</option>
+                    <option value="destination">Ubicacion</option>
                     <option value="Tigre">Tigre</option>
                     <option value="Lobos">Lobos</option>
                     <option value="Patagonia">Patagonia</option>
                 </select>
                 <p></p>
-                <select name="name" id="name" class="campo_tipo"  placeholder="tipo de domo" value ="Tipo de domo ">
+                <select name="name" id="name" class="campo_tipo"  placeholder="tipo de domo" value ="name">
                    
-                    <option value="">Tipo de Domo</option>
+                    <option value="name">Tipo de Domo</option>
                     <option value="Standart">Domo Standart</option>
                     <option value="superior">Domo Superior</option>
                     <option value="Suite">Suite Domo</option>
                 </select>
                 <p></p>
-                <select name="pax" id="pax"  class="campo_contrasena" placeholder="pax" value ="Pasajeros ">
+                <select name="pax" id="pax"  class="campo_contrasena" placeholder="pax" value ="pax">
                   
-                    <option value="">cantidad de Pax</option>
+                    <option value="pax">cantidad de Pax</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -51,9 +51,12 @@
                 <input type="text" name="prize" id="prize"  class="campo_contrasena" placeholder="precio" value ="<%= locals.oldValues ? oldValues.prize : null %> ">
                 <span><%=  locals.errors && errors.prize ? errors.prize.msg : ''  %></span>
                 <p></p>
+                <input type="text" name="comment" id="comment" class="campo_tipo"  placeholder="Descripcion" >
+                <p></p>
                 <input type="file" name="image" id="image" class="campo_tipo">
                 <span><%=  locals.errors && errors.image ? errors.image.msg : ''  %></span>
                 <p></p>
+              
                 <button type="submit"class="ingresar" value="Registrar Domo"> Registrar </button> 
                 <p></p>
             </form >

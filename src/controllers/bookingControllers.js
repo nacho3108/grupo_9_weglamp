@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const productosModel = require('../models/productosModel')
 const multer = require('multer');
 const {validationResult } =require("express-validator");
@@ -53,7 +54,7 @@ const bookingControllers = {
 
     update:(req, res) => {
         const data = req.body;
-       
+   
        
         const { id } = req.params;
         db.Dome.findByPk(id)
@@ -92,7 +93,22 @@ const bookingControllers = {
     })
 },
 
-    store: (req, res) => {
+    store: async (req, res) => {
+        const formValidation = validationResult(req)
+        const Dome = await db.Dome.findAll()
+        const oldValues = req.body
+        /* si encuentro un error devuelvo el formulario
+        con los valores ya cargados y los errores */
+        
+        if (!formValidation.isEmpty()) {
+            // borrar imagen
+            if (req.file) {
+                // primero chequeamos que exista
+                fs.unlinkSync(req.file.path)
+            }
+            res.render('booking/new', { Dome, oldValues, errors: formValidation.mapped() })
+          return  
+        }
         // Crear el objeto 
         const { destination, name, pax, prize } = req.body;
 
@@ -109,6 +125,7 @@ const bookingControllers = {
             prize:prize,
             image: '/images/' + image,
         }
+        res.redirect('/booking/edit/' + id);
 
         /*const productCreated = productosModel.create(product);*/
         db.Dome.create({

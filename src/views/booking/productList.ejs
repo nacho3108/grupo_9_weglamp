@@ -25,14 +25,14 @@
                   <br>  
                  <p> Estan permitidos hasta <%= producto.pax %> pasajeros por Domo</p>
                
-               <small>precios a partir de ...<%= producto.prize %>
+               <small>precios a partir de ...<%= producto.price %>
               </small> <div class="card-footer">
               <div class="btn-group" role="group" aria-label="Basic example">
 
                       <form action="/booking/detalle/<%= producto.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-secondary">Borrar domo</button></form>
 
-                      <form action="/booking/edit/<%= producto.id %>?_method=PUT" method="POST">
+                      <form action="/booking/edit/<%= producto.id %>" method="GET">
                          <button type="submit" class="btn btn-secondary">Editar</button></form>
                           
                          

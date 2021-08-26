@@ -36,12 +36,9 @@ const upload = multer({ storage })
 const bookingControllers = require('../controllers/bookingControllers');
 const validationNewDome = require('../middlewares/validationNewDome');
 
-bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail)
-bookingRoutes.get('/cartItem/', bookingControllers.cartItem)
-bookingRoutes.get('/productList/', bookingControllers.productList)
-bookingRoutes.get('/productList/:clase', bookingControllers.productClase)
-
-
+bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail);
+bookingRoutes.get('/cartItem/', bookingControllers.cartItem);
+bookingRoutes.get('/productList/', bookingControllers.productList);
 
 // Create
 bookingRoutes.get('/new',validationNewDome, bookingControllers.new);
@@ -49,11 +46,11 @@ bookingRoutes.get('/new',validationNewDome, bookingControllers.new);
 // aca deberíamos pasar multer
 bookingRoutes.post('/new', upload.single('image'),validationNewDome, bookingControllers.store);
 
-bookingRoutes.get('/edit/:id',bookingControllers.edit)
-bookingRoutes.put('/edit/:id',upload.single('image'),bookingControllers.update)
+bookingRoutes.get('/edit/:id', bookingControllers.edit);
+bookingRoutes.put('/edit/:id', upload.single('image'), bookingControllers.update);
 
-bookingRoutes.get('/detalle/:id?', bookingControllers.detalle)
-bookingRoutes.delete('/detalle/:id', bookingControllers.destroy)
+bookingRoutes.get('/detalle/:id?', bookingControllers.detalle);
+bookingRoutes.delete('/detalle/:id', bookingControllers.destroy);
 
 
 

@@ -31,12 +31,12 @@ const bookingControllers = {
         let data = req.body;
         const {id} = req.params;
         const {file} = req;
-        const domeOld = await db.Dome.findByPk(id);
+        const oldDome = await db.Dome.findByPk(id);
         
         if(file){
             data.image = "/images/" + file.filename;
         } else {
-            data.image = domeOld.image;
+            data.image = oldDome.image;
         }
 
         await db.Dome.update(data, {where: {id: id}});

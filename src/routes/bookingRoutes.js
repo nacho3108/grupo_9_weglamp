@@ -3,6 +3,7 @@ const bookingRoutes = express.Router();
 const path = require('path');
 const multer = require('multer');
 
+
 // destino donde guardar el archivo
 // nombre del archivo
 const storage = multer.diskStorage({
@@ -33,16 +34,17 @@ const upload = multer({ storage })
 
 
 const bookingControllers = require('../controllers/bookingControllers');
+const validationNewDome = require('../middlewares/validationNewDome');
 
 bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail);
 bookingRoutes.get('/cartItem/', bookingControllers.cartItem);
 bookingRoutes.get('/productList/', bookingControllers.productList);
 
 // Create
-bookingRoutes.get('/new', bookingControllers.new);
+bookingRoutes.get('/new',validationNewDome, bookingControllers.new);
 
 // aca deberíamos pasar multer
-bookingRoutes.post('/new', upload.single('image'), bookingControllers.store);
+bookingRoutes.post('/new', upload.single('image'),validationNewDome, bookingControllers.store);
 
 bookingRoutes.get('/edit/:id', bookingControllers.edit);
 bookingRoutes.put('/edit/:id', upload.single('image'), bookingControllers.update);

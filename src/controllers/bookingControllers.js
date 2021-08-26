@@ -54,7 +54,7 @@ const bookingControllers = {
 
     update:(req, res) => {
         const data = req.body;
-   
+       console.log("fui x update")
        
         const { id } = req.params;
         db.Dome.findByPk(id)
@@ -110,7 +110,7 @@ const bookingControllers = {
           return  
         }
         // Crear el objeto 
-        const { destination, name, pax, prize } = req.body;
+        const { destination, name, pax, prize, Comment } = req.body;
 
         // dentro de req.file va a venir la información del archivo
         const { file } = req
@@ -123,6 +123,7 @@ const bookingControllers = {
             name:name,
             pax:pax,
             prize:prize,
+            Comment:Comment,
             image: '/images/' + image,
         }
         res.redirect('/booking/edit/' + id);

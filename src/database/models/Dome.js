@@ -35,6 +35,10 @@ module.exports = (sequelize, dataTypes) => {
                 allowNull :false,
                 type: dataTypes.INTEGER
         },
+        comment :  {
+            allowNull :false,
+           type: dataTypes.STRING
+   },
         };
     let config ={
         tableName :"Domes",

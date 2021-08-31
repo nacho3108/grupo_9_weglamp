@@ -23,7 +23,7 @@
                 <h2 class="nuevo">Ya es usuario?</h2>
                 <a href="/user/login" class="crear">Ingresar</a>
             </section>
-
+            
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <input type="text" name="nombre" id="nombre" class="campo_nombre"  placeholder="Nombre"
                 class="<%= (locals.errors && errors.nombre) ? 'input-error' : '' %>" value="<%= locals.oldValues && oldValues.nombre %>"/>
@@ -106,7 +106,9 @@
                 <img src="/images/weglamp-vert.png" alt="foto" class="imagen">
             </section>
         </div>
+        <script src ="\js\form-validation-user-register.js">
 
+        </script>
         </main>
     </body>
 </html>

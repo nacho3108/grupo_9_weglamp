@@ -25,10 +25,10 @@
             <form action="/booking/new" method="POST" enctype="multipart/form-data">
                 <select name="destination" id="destination" class="campo_ubicacion"  placeholder="Ubicacion" >
                    
-                    <option value="destination">Ubicacion</option>
-                    <option value="Tigre">Tigre</option>
-                    <option value="Lobos">Lobos</option>
-                    <option value="Patagonia">Patagonia</option>
+                  
+                 <% destinations.forEach(destination => { %>
+                    <option value="<%= destination.id  %>"> <%= destination.destinationsName  %> </option>
+                 <% }) %>
                 </select>
                 <p></p>
                 <select name="name" id="name" class="campo_tipo"  placeholder="tipo de domo" value ="name">
@@ -39,7 +39,7 @@
                     <option value="Suite">Suite Domo</option>
                 </select>
                 <p></p>
-                <select name="pax" id="pax"  class="campo_contrasena" placeholder="pax" value ="pax">
+                <select name="pax" id="pax"  class="campo_contrasena" placeholder="pax">
                   
                     <option value="pax">cantidad de Pax</option>
                     <option value="1">1</option>
@@ -48,10 +48,11 @@
                     <option value="4">4</option>
                 </select>
                 <p></p>
-                <input type="text" name="price" id="price"  class="campo_contrasena" placeholder="precio" value ="<%= locals.oldValues ? oldValues.price : null %> ">
+                <input type="text" name="price" id="price"  class="campo_contrasena" placeholder="precio" value ="<%= locals.oldValues ? oldValues.price : null %>">
                 <span><%=  locals.errors && errors.price ? errors.price.msg : ''  %></span>
                 <p></p>
-                <input type="text" name="comment" id="comment" class="campo_tipo"  placeholder="Descripcion" >
+                <input type="text" name="comment" id="comment" class="campo_tipo"  placeholder="Descripcion" value ="<% locals.oldValues ? oldValues.comment : null  %>">
+                <span><%=  locals.errors && errors.comment ? errors.comment.msg : ''  %></span>
                 <p></p>
                 <input type="file" name="image" id="image" class="campo_tipo">
                 <span><%=  locals.errors && errors.image ? errors.image.msg : ''  %></span>

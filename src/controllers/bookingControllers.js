@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require('fs')
 //const productosModel = require('../models/productosModel')
 const multer = require('multer');
 const {validationResult} = require("express-validator");
@@ -18,8 +19,10 @@ const bookingControllers = {
         res.render("booking/productList", {productos: domes});
     },
     
-    new: (req, res) => {
-        res.render('booking/new');
+    new: async (req, res) => {
+       const destinations =  await db.Destination.findAll();
+
+        res.render('booking/new',{destinations});
     },
 
     edit: async (req, res) => {
@@ -50,9 +53,43 @@ const bookingControllers = {
     },
 
     store: async (req, res) => {
-        const {destination, name, pax, price} = req.body;
+        const formValidation = validationResult(req)
+        /*const newDome = await db.Dome.findAll()*/
+        
+        if (!formValidation.isEmpty()) {
+            // borrar imagen
+            if (req.file) {
+                // primero chequeamos que exista
+                fs.unlinkSync(req.file.path)
+            }
+             // tenemos errores
+             const destinations =  await db.Destination.findAll();
+            const oldValues = req.body
+            res.render('booking/new', { oldValues, destinations, errors: formValidation.mapped() })
+          return  
+        } 
+        const {destination, name, pax, price, comment} = req.body;
         const {file} = req;
         const image = "/images/" + file.filename;
+        
+
+       const newDome =  await db.Dome.create({
+            name: name,
+            destinationId: destination, // Temporal; necesitamos que lo agarre del formulario.
+            pax: pax,
+            image:image,
+            //classId: req.body.classId,
+            //ownerId: req.body.ownerId,
+            price: price,
+            comment : comment,
+        });
+
+        res.redirect('/booking/detalle/' + newDome.id); 
+    },
+    /*store: async (req, res) => {
+        const {destination, name, pax, price} = req.body;
+        const {file} = req;
+        const image = "/images/" + req.body.filename;
 
         newDome = await db.Dome.create({
             name: name,
@@ -65,7 +102,8 @@ const bookingControllers = {
         });
 
         res.redirect('/booking/detalle/' + newDome.id);
-    },
+    },*/
+
 
     destroy: async (req, res) => {
         const {id} = req.params;

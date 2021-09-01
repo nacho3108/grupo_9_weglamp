@@ -75,7 +75,7 @@ const bookingControllers = {
 
        const newDome =  await db.Dome.create({
             name: name,
-            destinationId: destination, // Temporal; necesitamos que lo agarre del formulario.
+            destinationId: destination, 
             pax: pax,
             image:image,
             //classId: req.body.classId,

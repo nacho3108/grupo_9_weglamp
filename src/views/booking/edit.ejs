@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/login.css">
         <script src="https://kit.fontawesome.com/ede0f8a666.js" crossorigin="anonymous"></script>
+        <script src="/js/form-validation-edit-dome.js"></script>
         <title>Edit</title>
     </head>
 <body>
@@ -28,14 +29,19 @@
                 <p></p>
                 <input type="text" name="destination" id="destination"  value="<%= dome.destination %>" class="campo_usuario" placeholder="Ubicacion"><br>
                 <p></p>
+                <div class="msg-error-destination"></div>
                 <input type="text" name="name" id="name" value="<%= dome.name %>" class="campo_contrasena" placeholder="tipo de domo">
                 <p></p>
+                <div class="msg-error-name"></div>
                 <input type="text" name="pax" id="pax" value="<%= dome.pax %>" class="campo_contrasena" placeholder="pax">
                 <p></p>
+                <div class="msg-error-pax"></div>
                 <input type="text" name="price" id="price" value="<%= dome.price %>" class="campo_contrasena" placeholder="precio">
                 <p></p>
+                <div class="msg-error-price"></div>
                 <input type="file" name="image" id="image" value="<%= dome.image %>" class="campo_contrasena">
                 <p></p>
+                <div class="msg-error-image"></div>
                 <!--    <p></p>
                 <label><input type="checkbox" class="mantenerme_logueado">Mantenerme logueado</label>-->
                 <input type="submit" class="ingresar" value="Editar">

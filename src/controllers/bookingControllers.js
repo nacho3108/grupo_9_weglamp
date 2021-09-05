@@ -18,7 +18,7 @@ const bookingControllers = {
         let domes = await db.Dome.findAll();
         res.render("booking/productList", {productos: domes});
     },
-    
+
     new: async (req, res) => {
        const destinations =  await db.Destination.findAll();
 

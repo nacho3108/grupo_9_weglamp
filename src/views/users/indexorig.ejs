@@ -11,54 +11,34 @@
         <main>
             <nav class="main-nav-bar"> 
                 <h3>Buscá tu paquete</h3>
-                
+               
                 <nav class="barradebusqueda">
-                    <form action="/booking/productDetail" method="POST">
-                        <input type="text" id ="destino" value="">
-                     <p id="resultado"></p>
+                    <form action="/productDetail" method="POST">
+                        <select name="destino" id="destino">
+                            <option value="destino">Destino</option>
+                            <option value="patagonia">Patagonia</option>
+                            <option value="lobos">Lobos</option>
+                            <option value="tigre">Tigre</option>
+                        </select>
                         <input type="date" name="checkinDate">
                         <input type="date" name="checkoutDate">
-                        
-                    <i class="fas fa-search" id="search"><button type="submit">
-                      Buscar</button></i> 
-                     
+                        <!--<select name="Pax_a" id="pax_a">
+                            <option value="adultos">Adultos</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select name="Pax_m" id="pax_m"></label>
+                            <option value="menores">Menores</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select> -->
+                    <i class="fas fa-search"><button type="submit"> <a href="/booking/productDetail">Buscar</a></button></i> 
                     </form>
-                    <script> 
-                    const destinos = [
-                                    {nombre: "patagonia"},
-                                    {nombre: "tigre"},
-                                    {nombre: "lobos"},
-                    ]
-                        const form = document.querySelector("form");
-                        const destination = document.querySelector("destino");
-                        const search = document.querySelector("#search");
-                        const resultado = document.querySelector("#resultado")
-                        const filter = () => {
-                           
-                         /*console.log(form.value);*/
-                         resultado.innerHTML ="";
-                         const texto = destino.value.toLowerCase()
-
-                         for(let destino of destinos){
-                             let domo = destino.nombre.toLowerCase();
-                             if(domo.indexOf(texto)!== -1){
-                                resultado.innerHTML += destino.nombre
-                             }
-
-                         }
-                         if(resultado.innerHTML === ""){
-                            resultado.innerHTML += "destino no encontrado..."
-                         }
-                        }
-                        form.addEventListener("submit", e => {
-                            e.preventDefault()
-                            filter()
-                        })
-        
-                        </script>
-                </nav>     
-               
-
+                </nav>        
                 <nav class="sindecidir">
                     <div class="switch_container">
                         <label class="form-switch">

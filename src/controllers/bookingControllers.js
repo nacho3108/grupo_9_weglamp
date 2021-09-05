@@ -86,23 +86,7 @@ const bookingControllers = {
 
         res.redirect('/booking/detalle/' + newDome.id); 
     },
-    /*store: async (req, res) => {
-        const {destination, name, pax, price} = req.body;
-        const {file} = req;
-        const image = "/images/" + req.body.filename;
-
-        newDome = await db.Dome.create({
-            name: name,
-            destinationId: 1, // Temporal; necesitamos que lo agarre del formulario.
-            pax: pax,
-            image:image,
-            //classId: req.body.classId,
-            //ownerId: req.body.ownerId,
-            price: price
-        });
-
-        res.redirect('/booking/detalle/' + newDome.id);
-    },*/
+   
 
 
     destroy: async (req, res) => {

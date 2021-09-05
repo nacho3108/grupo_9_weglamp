@@ -19,6 +19,13 @@ const bookingControllers = {
         res.render("booking/productList", {productos: domes});
     },
 
+    search: async (req, res) => {
+       
+        let domes = await db.Dome.findAll({where: {destinationId : 2 }});
+        res.render("booking/productList", {productos: domes});
+    },
+
+ 
     new: async (req, res) => {
        const destinations =  await db.Destination.findAll();
 

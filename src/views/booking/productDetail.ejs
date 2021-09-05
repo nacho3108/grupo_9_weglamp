@@ -17,9 +17,17 @@
         <nav class="main-nav-bar"> 
             <h3>Buscá tu paquete</h3>
             <nav class="barradebusqueda">
-              <form action="/booking/productDetail" method="POST">
-                  <input type="text" id ="destino" value="">
+              <form action="/booking/productSearch" method="GET">
+                 
+
+                  <select name="destino" id="destino">
+                    <option value="2">Patagonia</option>
+                    <option value="3">Lobos</option>
+                    <option value="1">Tigre</option>
+                </select>
+
                <p id="resultado"></p>
+
                   <input type="date" name="checkinDate">
                   <input type="date" name="checkoutDate">
                   
@@ -27,7 +35,7 @@
                 Buscar</button></i> 
                
               </form>
-              <script  src ="\js\search-bar.js"></script>
+             <!-- <script  src ="\js\search-bar.js"></script>-->
               
                   
           </nav>     
@@ -77,7 +85,7 @@
                 
                  <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
                  <br>
-                 <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+                 
             </form>
           </div>
 
@@ -88,9 +96,9 @@
                   <label for="destination" name= "destination">Destino</label>
   
                      <select name="destination" id="destination">
-                          <option value="patagonia">Patagonia</option>
-                          <option value="lobos">Lobos</option>
-                          <option value="tigre">Tigre</option>
+                          <option value="2">Patagonia</option>
+                          <option value="3">Lobos</option>
+                          <option value="1">Tigre</option>
                       </select>
                       </form>
           <form action="/booking/productDetail" method="POST">
@@ -104,7 +112,7 @@
            <br>
            <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
            <br>
-           <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+        
               
       </form>
           </div>
@@ -134,7 +142,7 @@
                <br>
                <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
                <br>
-               <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+              
           </form>
           </div>
         </div>

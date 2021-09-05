@@ -39,6 +39,7 @@ const validationNewDome = require('../middlewares/validationNewDome');
 bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail);
 bookingRoutes.get('/cartItem/', bookingControllers.cartItem);
 bookingRoutes.get('/productList/', bookingControllers.productList);
+bookingRoutes.get('/productSearch/', bookingControllers.search);
 
 // Create
 bookingRoutes.get('/new',validationNewDome, bookingControllers.new);

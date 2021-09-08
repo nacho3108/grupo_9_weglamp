@@ -24,16 +24,18 @@ app.use(cookiesSessionMiddleware);
 app.use(sessionToLocals);
 
 // Módulos de rutas
-const mainRoutes = require('./routes/mainRoutes');
-const aboutRoutes = require('./routes/aboutRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
-const userRoutes = require ('./routes/usersRoutes');
+const mainRoutes = require("./routes/mainRoutes");
+const aboutRoutes = require("./routes/aboutRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
+const userRoutes = require("./routes/usersRoutes");
+const apiRoutes = require("./routes/api")
 
 // Configuración de rutas
-app.use('/', mainRoutes);
-app.use('/about', aboutRoutes);
-app.use('/booking', bookingRoutes);
-app.use('/user', userRoutes);
+app.use("/", mainRoutes);
+app.use("/about", aboutRoutes);
+app.use("/booking", bookingRoutes);
+app.use("/user", userRoutes);
+app.use("/api", apiRoutes);
 
 // Ejecución del servidor de Express con puerto para Heroku
 app.listen(process.env.PORT || 3000,function(){

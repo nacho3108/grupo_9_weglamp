@@ -1,15 +1,16 @@
-const path = require('path')
-const fs = require('fs')
-const registerModel = require('../models/registerModel')
-const bcrypt = require('bcryptjs')
-const { validationResult } = require('express-validator')
-const { maxAgeUserCookie } = require('../config/config')
-const {User}= require("../database/models")
+const path = require("path");
+const fs = require("fs");
+const multer = require("multer");
+const bcrypt = require("bcryptjs");
+const {validationResult} = require("express-validator");
+const {maxAgeUserCookie} = require("../config/config");
+const db = require("../database/models");
 
-const userControllers = {
+const usersController = {
     login: (req, res) => {
-        res.render('users/login')
+        res.render("users/login")
     },
+
     processLogin: (req, res) => {
         const formValidation = validationResult(req);
 
@@ -23,7 +24,7 @@ const userControllers = {
         const { email, remember} = req.body
             
         // le pedimos al modelo el usuario
-        User.findOne({
+        db.User.findOne({
             where :{
                 email
             }
@@ -91,7 +92,7 @@ const userControllers = {
             image: '/images/users/' + image,
         }
         
-        User.create(user)
+        db.User.create(user)
         .then(()=>{
          res.redirect('/user/login');   
         })
@@ -113,4 +114,4 @@ const userControllers = {
     },
 }
 
-module.exports = userControllers;
+module.exports = usersController;

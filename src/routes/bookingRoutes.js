@@ -1,8 +1,7 @@
-const express = require('express');
+const express = require("express");
 const bookingRoutes = express.Router();
-const path = require('path');
-const multer = require('multer');
-
+const path = require("path");
+const multer = require("multer");
 
 // destino donde guardar el archivo
 // nombre del archivo
@@ -33,24 +32,24 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 
-const bookingControllers = require('../controllers/bookingControllers');
+const bookingController = require('../controllers/bookingController');
 const validationNewDome = require('../middlewares/validationNewDome');
 
-bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail);
-bookingRoutes.get('/cartItem/', bookingControllers.cartItem);
-bookingRoutes.get('/productList/', bookingControllers.productList);
+bookingRoutes.get('/productDetail/:id?', bookingController.productDetail);
+bookingRoutes.get('/cartItem/', bookingController.cartItem);
+bookingRoutes.get('/productList/', bookingController.productList);
 
 // Create
-bookingRoutes.get('/new',validationNewDome, bookingControllers.new);
+bookingRoutes.get('/new',validationNewDome, bookingController.new);
 
 // aca deberíamos pasar multer
-bookingRoutes.post('/new', upload.single('image'),validationNewDome, bookingControllers.store);
+bookingRoutes.post('/new', upload.single('image'),validationNewDome, bookingController.store);
 
-bookingRoutes.get('/edit/:id', bookingControllers.edit);
-bookingRoutes.put('/edit/:id', upload.single('image'), bookingControllers.update);
+bookingRoutes.get('/edit/:id', bookingController.edit);
+bookingRoutes.put('/edit/:id', upload.single('image'), bookingController.update);
 
-bookingRoutes.get('/detalle/:id?', bookingControllers.detalle);
-bookingRoutes.delete('/detalle/:id', bookingControllers.destroy);
+bookingRoutes.get('/detalle/:id?', bookingController.detalle);
+bookingRoutes.delete('/detalle/:id', bookingController.destroy);
 
 
 

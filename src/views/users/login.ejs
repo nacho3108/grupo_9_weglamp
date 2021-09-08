@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
     <script src="https://kit.fontawesome.com/ede0f8a666.js" crossorigin="anonymous"></script>
-    
+    <script src="/js/form-validation-user-login.js"></script>
     <title>Login</title>
 
 </head>
@@ -28,14 +28,18 @@
                                 <p><%= errors.email.msg %></p>
                             <% } %> <br>
                             <p></p>
+                            <div class="msg-error-email"></div>
+
                             <input type="text" name="password" id="password" placeholder="Contraseña" class="campo_contrasena <%= (locals.errors && errors.password) ? 'input-error' : '' %>"  value="<%= locals.oldValues && oldValues.password %>"/>
-                                
+ 
                             <% if (locals.errors && errors.password) { %>
                                 <p><%= errors.password.msg %></p>
                             <% } %>
                             <p></p>
                             <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
                             <p></p>
+                            <div class="msg-error-password"></div>
+
                             <button type="submit" class="ingresar" value="Ingresar">Ingresar</button>
                         </form>
                         <section class="ingreso_alternativo">

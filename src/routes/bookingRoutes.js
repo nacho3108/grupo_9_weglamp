@@ -38,6 +38,7 @@ const validationNewDome = require('../middlewares/validationNewDome');
 bookingRoutes.get('/productDetail/:id?', bookingController.productDetail);
 bookingRoutes.get('/cartItem/', bookingController.cartItem);
 bookingRoutes.get('/productList/', bookingController.productList);
+bookingRoutes.get('/productSearch/', bookingController.search);
 
 // Create
 bookingRoutes.get('/new',validationNewDome, bookingController.new);
@@ -51,9 +52,4 @@ bookingRoutes.put('/edit/:id', upload.single('image'), bookingController.update)
 bookingRoutes.get('/detalle/:id?', bookingController.detalle);
 bookingRoutes.delete('/detalle/:id', bookingController.destroy);
 
-
-
-
-
-
-module.exports = bookingRoutes
+module.exports = bookingRoutes;

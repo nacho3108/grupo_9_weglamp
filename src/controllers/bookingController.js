@@ -17,7 +17,13 @@ const bookingController = {
         let domes = await db.Dome.findAll();
         res.render("booking/productList", {productos: domes});
     },
-    
+
+    search: async (req, res) => {
+        let domes = await db.Dome.findAll({where: {destinationId : 2 }});
+        res.render("booking/productList", {productos: domes});
+    },
+
+ 
     new: async (req, res) => {
         const destinations =  await db.Destination.findAll();
         res.render("booking/new", {destinations});
@@ -73,7 +79,7 @@ const bookingController = {
 
         const newDome =  await db.Dome.create({
             name: name,
-            destinationId: destination, // Temporal; necesitamos que lo agarre del formulario.
+            destinationId: destination, 
             pax: pax,
             image: image,
             //classId: req.body.classId,
@@ -84,23 +90,7 @@ const bookingController = {
 
         res.redirect("/booking/detalle/" + newDome.id); 
     },
-    /*store: async (req, res) => {
-        const {destination, name, pax, price} = req.body;
-        const {file} = req;
-        const image = "/images/" + req.body.filename;
-
-        newDome = await db.Dome.create({
-            name: name,
-            destinationId: 1, // Temporal; necesitamos que lo agarre del formulario.
-            pax: pax,
-            image:image,
-            //classId: req.body.classId,
-            //ownerId: req.body.ownerId,
-            price: price
-        });
-
-        res.redirect('/booking/detalle/' + newDome.id);
-    },*/
+   
 
 
     destroy: async (req, res) => {

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
     <script src="https://kit.fontawesome.com/ede0f8a666.js" crossorigin="anonymous"></script>
+    <script src="/js/form-validation-new-dome.js"></script>
     <title>new</title>
 </head>
 <body>
@@ -31,6 +32,9 @@
                  <% }) %>
                 </select>
                 <p></p>
+                <div class="msg-error-destination"></div>
+
+                
                 <select name="name" id="name" class="campo_tipo"  placeholder="tipo de domo" value ="name">
                    
                     <option value="name">Tipo de Domo</option>
@@ -39,6 +43,9 @@
                     <option value="Suite">Suite Domo</option>
                 </select>
                 <p></p>
+                <div class="msg-error-name"></div>
+
+
                 <select name="pax" id="pax"  class="campo_contrasena" placeholder="pax">
                   
                     <option value="pax">cantidad de Pax</option>
@@ -48,16 +55,27 @@
                     <option value="4">4</option>
                 </select>
                 <p></p>
+                <div class="msg-error-pax"></div>
+
+
                 <input type="text" name="price" id="price"  class="campo_contrasena" placeholder="precio" value ="<%= locals.oldValues ? oldValues.price : null %>">
                 <span><%=  locals.errors && errors.price ? errors.price.msg : ''  %></span>
                 <p></p>
+                <div class="msg-error-price"></div>
+
+
                 <input type="text" name="comment" id="comment" class="campo_tipo"  placeholder="Descripcion" value ="<% locals.oldValues ? oldValues.comment : null  %>">
                 <span><%=  locals.errors && errors.comment ? errors.comment.msg : ''  %></span>
                 <p></p>
+                <div class="msg-error-comment"></div>
+
+
                 <input type="file" name="image" id="image" class="campo_tipo">
                 <span><%=  locals.errors && errors.image ? errors.image.msg : ''  %></span>
                 <p></p>
+                <div class="msg-error-image"></div>
               
+
                 <button type="submit"class="ingresar" value="Registrar Domo"> Registrar </button> 
                 <p></p>
             </form >

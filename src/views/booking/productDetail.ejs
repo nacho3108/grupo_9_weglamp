@@ -17,37 +17,28 @@
         <nav class="main-nav-bar"> 
             <h3>Buscá tu paquete</h3>
             <nav class="barradebusqueda">
-                <form action="/productDetail" method="POST">
-                       <select name="destino" id="destino">
-                        <option value="destino">Destino</option>
-                            <option value="patagonia">Patagonia</option>
-                            <option value="lobos">Lobos</option>
-                            <option value="tigre">Tigre</option>
-                        </select>
-    
-                             <input type="date" name="checkinDate">
-                             <input type="date" name="checkoutDate">
-    
-                    <!--<select name="Pax_a" id="pax_a">
-                        <option value="adultos">Adultos</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                     </select>
-                     <select name="Pax_m" id="pax_m"></label>
-                        <option value="menores">Menores</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                     </select>-->
-               
-                <i class="fas fa-search"><button type="submit"> <a href="/booking/productDetail">Buscar</a></button>
-                  </i> 
+              <form action="/booking/productSearch" method="GET">
                  
-            </form>
-            </nav>
+
+                  <select name="destino" id="destino">
+                    <option value="2">Patagonia</option>
+                    <option value="3">Lobos</option>
+                    <option value="1">Tigre</option>
+                </select>
+
+               <p id="resultado"></p>
+
+                  <input type="date" name="checkinDate">
+                  <input type="date" name="checkoutDate">
+                  
+              <i class="fas fa-search" id="search"><button type="submit">
+                Buscar</button></i> 
+               
+              </form>
+             <!-- <script  src ="\js\search-bar.js"></script>-->
+              
+                  
+          </nav>     
            
             <nav class="sindecidir">
                 <div class="switch_container">
@@ -94,7 +85,7 @@
                 
                  <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
                  <br>
-                 <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+                 
             </form>
           </div>
 
@@ -105,9 +96,9 @@
                   <label for="destination" name= "destination">Destino</label>
   
                      <select name="destination" id="destination">
-                          <option value="patagonia">Patagonia</option>
-                          <option value="lobos">Lobos</option>
-                          <option value="tigre">Tigre</option>
+                          <option value="2">Patagonia</option>
+                          <option value="3">Lobos</option>
+                          <option value="1">Tigre</option>
                       </select>
                       </form>
           <form action="/booking/productDetail" method="POST">
@@ -121,7 +112,7 @@
            <br>
            <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
            <br>
-           <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+        
               
       </form>
           </div>
@@ -151,7 +142,7 @@
                <br>
                <button type="button" class="btn btn-secondary"><a href="/booking/productList/">Descripcion</a> </button>
                <br>
-               <button type="button" class="btn btn-outline-dark"><a href="/booking/new">Nuevo</a></button>
+              
           </form>
           </div>
         </div>

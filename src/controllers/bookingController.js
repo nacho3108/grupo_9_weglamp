@@ -22,7 +22,6 @@ const bookingController = {
         let domes = await db.Dome.findAll({where: {destinationId : 2 }});
         res.render("booking/productList", {productos: domes});
     },
-
  
     new: async (req, res) => {
         const destinations =  await db.Destination.findAll();
@@ -69,8 +68,7 @@ const bookingController = {
              // tenemos errores
              const destinations =  await db.Destination.findAll();
             const oldValues = req.body
-            res.render("booking/new", { oldValues, destinations, errors: formValidation.mapped() })
-          return  
+            return res.render("booking/new", {oldValues, destinations, errors: formValidation.mapped()})
         } 
         const {destination, name, pax, price, comment} = req.body;
         const {file} = req;
@@ -91,8 +89,6 @@ const bookingController = {
         res.redirect("/booking/detalle/" + newDome.id); 
     },
    
-
-
     destroy: async (req, res) => {
         const {id} = req.params;
         await db.Dome.destroy({where: {id}});
@@ -100,4 +96,4 @@ const bookingController = {
     }
 }
 
-module.exports = bookingController ;
+module.exports = bookingController;

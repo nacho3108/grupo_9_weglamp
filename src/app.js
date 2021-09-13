@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser("paulisdeadman"));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views','./src/views');
@@ -27,14 +27,14 @@ app.use(sessionToLocals);
 const mainRoutes = require("./routes/mainRoutes");
 const aboutRoutes = require("./routes/aboutRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
-const userRoutes = require("./routes/usersRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 const apiRoutes = require("./routes/api")
 
 // Configuración de rutas
 app.use("/", mainRoutes);
 app.use("/about", aboutRoutes);
 app.use("/booking", bookingRoutes);
-app.use("/user", userRoutes);
+app.use("/user", usersRoutes);
 app.use("/api", apiRoutes);
 
 // Ejecución del servidor de Express con puerto para Heroku

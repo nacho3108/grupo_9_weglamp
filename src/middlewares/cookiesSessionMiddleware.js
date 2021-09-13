@@ -1,18 +1,15 @@
-const registerModel = require('../models/registerModel')
+const db = require("../database/models");
 
-module.exports = (req, res, next) => {
-    // chequeamos si existe cookie
-    // Si existe buscamos en el modelo el usuario
-    // Lo guardamos en la session
-    const userCookie = req.signedCookies.user
+module.exports = async (req, res, next) => {
+    const userCookie = req.signedCookies.user;
     
+    // Si existe el cookie de usuario, revisa si es válido y lo pasa a sesión.
     if (userCookie) {
-        const user = registerModel.findByPk(userCookie)
-        
-        delete user.password
-        // pasar a la sesión
-        req.session.logged = user
+        const user = await db.User.findByPk(userCookie, {attributes: ["id"]});
+        if(user){
+            req.session.logged = user;
+        }
     }
 
-    next()
+    next();
 }

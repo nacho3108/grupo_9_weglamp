@@ -36,7 +36,7 @@
                                 <p><%= errors.password.msg %></p>
                             <% } %>
                             <p></p>
-                            <label><input type="checkbox" class="mantenerme_logueado"value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
+                            <label><input type="checkbox" name="remember" class="mantenerme_logueado" value="yes" <%= (locals.oldValues && oldValues.remember === 'yes') ? 'checked' : '' %>>Mantenerme logueado</label>
                             <p></p>
                             <div class="msg-error-password"></div>
 

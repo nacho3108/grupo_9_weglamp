@@ -51,15 +51,19 @@ const usersController = {
         const {file} = req; // Archivo de imagen.
         const image = file.filename; // Nombre del archivo.
         const hashPassword = bcrypt.hashSync(password); // Contraseña hasheada.
-
-        // Creación del objeto usuario.
-        const newUser = await db.User.create({
-            name: nombre,
-            surname: apellido,
-            email: email,
-            password: hashPassword,
-            image: "/images/users/" + image
-        });
+        try{
+            // Creación del objeto usuario.
+            const newUser = await db.User.create({
+                name: nombre,
+                surname: apellido,
+                email: email,
+                password: hashPassword,
+                image: "/images/users/" + image
+            });
+        }
+        catch(err){
+            console.log(err);
+        }
 
         res.redirect("/user/login");
     },

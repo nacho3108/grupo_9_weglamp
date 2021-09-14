@@ -33,9 +33,9 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.DECIMAL
         },
-        comment: {
+        description: {
            /* allowNull :false,*/
-           type: dataTypes.STRING
+           type: dataTypes.TEXT
         },
     };
     let config = {

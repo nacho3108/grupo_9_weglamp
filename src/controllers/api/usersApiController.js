@@ -1,37 +1,40 @@
-const {User}= require("../../database/models");
+const {User} = require("../../database/models");
 
 module.exports = {
     async userList(req, res){
         try{
-            const users = await User.findAndCountAll();
-            const usersInfo = [];
+            const users = await User.findAndCountAll(); // Petición a la base de datos.
+            const usersInfo = []; // Array auxiliar.
 
+            // Poblar el array con los datos necesarios de cada usuario.
             users.rows.forEach(user => {
                 let info = {
                     id: user.id,
                     name: user.name + " " + user.surname,
                     email: user.email,
-                    detail: "http://" + req.headers.host + "/api/users/:" + user.id
+                    detail: "http://" + req.headers.host + "/api/users/" + user.id
                 }
                 usersInfo.push(info);
-            })
+            });
 
+            // Si todo sale bien, se pasa la información con estado exitoso.
             res.status(200).json({
                 meta: {
                     status: "success",
-                    total: users.count
+                    count: users.count
                 },
                 data: {
                     users: usersInfo
                 }
             });
         } catch(err){
+            // Si surge algún error, se pasa el mismo con estado de error.
             res.status(500).json({
                 meta: {
                     status: "error"
                 },
                 error: {
-                    msg: "Cannot connect to database",
+                    msg: "Could not connect to database.",
                     err
                 }
             });
@@ -42,6 +45,7 @@ module.exports = {
         try{
             const user = await User.findByPk(req.params.id);
             
+            // Si el usuario no existe, se devuelve un error 404.
             if(!user){
                 res.status(404).json({
                     meta: {
@@ -55,27 +59,14 @@ module.exports = {
                 name: user.name,
                 surname: user.surname,
                 email: user.email,
-                image: "hola"
+                image: "http://" + req.headers.host + user.image
             };
-
-            users.rows.forEach(user => {
-                let info = {
-                    id: user.id,
-                    name: user.name + " " + user.surname,
-                    email: user.email,
-                    detail: "http://" + req.headers.host + "/api/users/:" + user.id
-                }
-                userInfo.push(info);
-            })
 
             res.status(200).json({
                 meta: {
                     status: "success",
-                    total: users.count
                 },
-                data: {
-                    users: userInfo
-                }
+                data: userInfo
             });
         } catch(err){
             res.status(500).json({
@@ -83,7 +74,7 @@ module.exports = {
                     status: "error"
                 },
                 error: {
-                    msg: "Cannot connect to database",
+                    msg: "Could not connect to database",
                     err
                 }
             });

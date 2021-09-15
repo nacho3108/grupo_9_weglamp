@@ -18,14 +18,12 @@
             <h3>Buscá tu paquete</h3>
             <nav class="barradebusqueda">
               <form action="/booking/productSearch" method="GET">
-                 
-
+                
                   <select name="destino" id="destino">
-                    <option value="2">Patagonia</option>
-                    <option value="3">Lobos</option>
-                    <option value="1">Tigre</option>
-                </select>
-
+                    <% destinations.forEach(destination => { %>
+                      <option value="<%= destination.id  %>"> <%= destination.destinationsName  %> </option>
+                   <% }) %>
+             </select>
                <p id="resultado"></p>
 
                   <input type="date" name="checkinDate">

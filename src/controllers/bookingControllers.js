@@ -6,8 +6,9 @@ const {validationResult} = require("express-validator");
 const db = require("../database/models")
 
 const bookingControllers = {
-    productDetail: (req, res) => {
-        res.render('booking/productDetail');
+    productDetail: async (req, res) => {
+        const destinations =  await db.Destination.findAll();
+        res.render('booking/productDetail',{destinations});
     },
 
     cartItem: (req, res) => {
@@ -20,15 +21,14 @@ const bookingControllers = {
     },
 
     search: async (req, res) => {
-       
-        let domes = await db.Dome.findAll({where: {destinationId : 2 }});
+     
+        let domes = await db.Dome.findAll({where: {destinationId : req.query.destino }});
         res.render("booking/productList", {productos: domes});
     },
 
  
     new: async (req, res) => {
-       const destinations =  await db.Destination.findAll();
-
+        const destinations =  await db.Destination.findAll();
         res.render('booking/new',{destinations});
     },
 

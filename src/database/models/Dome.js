@@ -1,49 +1,47 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias ="Dome";
-    let cols ={
-        id : {
-            autoIncrement : true,
-            primaryKey : true,
+    let alias = "Dome";
+    let cols = {
+        id: {
+            autoIncrement: true,
+            primaryKey: true,
             type: dataTypes.INTEGER
         },
-        name : {
-            allowNull :false,
+        name: {
+            allowNull: false,
             type: dataTypes.STRING
         },
-        destinationId : {
-           
-                allowNull :false,
-                type: dataTypes.STRING
-            
+        pax: {
+            allowNull: false,
+            type: dataTypes.INTEGER
         },
-        pax : {
-                allowNull :false,
-                type: dataTypes.BOOLEAN
+        image: {
+            type: dataTypes.STRING
         },
-        image : {
-                 type: dataTypes.STRING
+        classId: {
+            /*allowNull :false,*/
+            type: dataTypes.INTEGER
         },
-        classId : {
-                 /*allowNull :false,*/
-                type: dataTypes.BOOLEAN
+        destinationId: {
+            allowNull: false,
+            type: dataTypes.INTEGER
         },
-        ownerId : {
-                 /*allowNull :false,*/
-                type: dataTypes.STRING
+        ownerId: {
+            /*allowNull :false,*/
+            type: dataTypes.INTEGER
         },
-        price : {
-                allowNull :false,
-                type: dataTypes.INTEGER
+        price: {
+            allowNull: false,
+            type: dataTypes.DECIMAL
         },
-        comment :  {
+        description: {
            /* allowNull :false,*/
-           type: dataTypes.STRING
-   },
-        };
-    let config ={
-        tableName :"Domes",
-        timestamps : false,
-        underscored : true
+           type: dataTypes.TEXT
+        },
+    };
+    let config = {
+        tableName: "Domes",
+        timestamps: false,
+        underscored: true
     };
     const DomeModel = sequelize.define(alias, cols, config);
     DomeModel.associate = models => {

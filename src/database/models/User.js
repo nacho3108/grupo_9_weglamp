@@ -22,12 +22,12 @@ module.exports = (sequelize, dataTypes) => {
            /* allowNull :false,*/
             type: dataTypes.STRING
         },
-        avatar:{
+        image:{
             type: dataTypes.STRING
         },
         roleId :{
            /* allowNull :false,*/
-            type: dataTypes.BOOLEAN
+            type: dataTypes.INTEGER
         }
         };
     let config ={

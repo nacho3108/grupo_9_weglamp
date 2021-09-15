@@ -1,18 +1,23 @@
 const path = require("path");
-const fs = require('fs')
-//const productosModel = require('../models/productosModel')
-const multer = require('multer');
+const fs = require("fs");
+const multer = require("multer");
 const {validationResult} = require("express-validator");
-const db = require("../database/models")
+const db = require("../database/models");
 
+<<<<<<< HEAD:src/controllers/bookingControllers.js
 const bookingControllers = {
     productDetail: async (req, res) => {
         const destinations =  await db.Destination.findAll();
         res.render('booking/productDetail',{destinations});
+=======
+const bookingController = {
+    productDetail: (req, res) => {
+        res.render("booking/productDetail");
+>>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
     },
 
     cartItem: (req, res) => {
-        res.render('booking/cartItem');
+        res.render("booking/cartItem");
     },
 
     productList: async (req, res) => {
@@ -21,15 +26,22 @@ const bookingControllers = {
     },
 
     search: async (req, res) => {
+<<<<<<< HEAD:src/controllers/bookingControllers.js
      
         let domes = await db.Dome.findAll({where: {destinationId : req.query.destino }});
+=======
+        let domes = await db.Dome.findAll({where: {destinationId : 2 }});
+>>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
         res.render("booking/productList", {productos: domes});
     },
-
  
     new: async (req, res) => {
         const destinations =  await db.Destination.findAll();
+<<<<<<< HEAD:src/controllers/bookingControllers.js
         res.render('booking/new',{destinations});
+=======
+        res.render("booking/new", {destinations});
+>>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
     },
 
     edit: async (req, res) => {
@@ -56,7 +68,7 @@ const bookingControllers = {
     detalle: async (req, res) => {
         const {id} = req.params;
         const dome = await db.Dome.findByPk(id, {include:["destination"]});
-        res.render('booking/detalle', {detalleProductos: dome});
+        res.render("booking/detalle", {detalleProductos: dome});
     },
 
     store: async (req, res) => {
@@ -72,35 +84,32 @@ const bookingControllers = {
              // tenemos errores
              const destinations =  await db.Destination.findAll();
             const oldValues = req.body
-            res.render('booking/new', { oldValues, destinations, errors: formValidation.mapped() })
-          return  
+            return res.render("booking/new", {oldValues, destinations, errors: formValidation.mapped()})
         } 
         const {destination, name, pax, price, comment} = req.body;
         const {file} = req;
         const image = "/images/" + file.filename;
         
 
-       const newDome =  await db.Dome.create({
+        const newDome =  await db.Dome.create({
             name: name,
             destinationId: destination, 
             pax: pax,
-            image:image,
+            image: image,
             //classId: req.body.classId,
             //ownerId: req.body.ownerId,
             price: price,
             comment : comment,
         });
 
-        res.redirect('/booking/detalle/' + newDome.id); 
+        res.redirect("/booking/detalle/" + newDome.id); 
     },
    
-
-
     destroy: async (req, res) => {
         const {id} = req.params;
         await db.Dome.destroy({where: {id}});
-        res.redirect('/booking/productList');
+        res.redirect("/booking/productList");
     }
 }
 
-module.exports = bookingControllers ;
+module.exports = bookingController;

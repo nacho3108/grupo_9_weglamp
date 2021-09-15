@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
         //     errorPassword.innerText = "Por favor ingrese una contraseña";
         // }
 
-        if(!inputPassword.length < 8){
+        if(inputPassword.length < 8){
             hasErrors = true;
             errorPassword.innerText = "Por favor ingrese una contraseña de más de 8 caracteres de largo";
         }

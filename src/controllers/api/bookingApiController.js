@@ -53,6 +53,7 @@ module.exports = {
     async domeDetail(req, res){
         try{
             const dome = await db.Dome.findByPk(req.params.id);
+            const destinations = await db.Destination.findAll();
             
             // Si el domo no existe, se devuelve un error 404.
             if(!dome){
@@ -66,7 +67,10 @@ module.exports = {
             const domeInfo = {
                 id: dome.id,
                 name: dome.name,
-                destination: dome.destinationId,
+                destination: {
+                    id: dome.destinationId,
+                    name: destinations.find(des => des.id == dome.destinationId).destinationsName
+                },
                 pax: dome.pax,
                 price: dome.price,
                 image: "http://" + req.headers.host + dome.image

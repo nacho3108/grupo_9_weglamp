@@ -4,16 +4,10 @@ const multer = require("multer");
 const {validationResult} = require("express-validator");
 const db = require("../database/models");
 
-<<<<<<< HEAD:src/controllers/bookingControllers.js
-const bookingControllers = {
+const bookingController = {
     productDetail: async (req, res) => {
         const destinations =  await db.Destination.findAll();
-        res.render('booking/productDetail',{destinations});
-=======
-const bookingController = {
-    productDetail: (req, res) => {
-        res.render("booking/productDetail");
->>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
+        res.render("booking/productDetail", {destinations});
     },
 
     cartItem: (req, res) => {
@@ -26,22 +20,13 @@ const bookingController = {
     },
 
     search: async (req, res) => {
-<<<<<<< HEAD:src/controllers/bookingControllers.js
-     
-        let domes = await db.Dome.findAll({where: {destinationId : req.query.destino }});
-=======
-        let domes = await db.Dome.findAll({where: {destinationId : 2 }});
->>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
+        let domes = await db.Dome.findAll({where: {destinationId: req.query.destino}});
         res.render("booking/productList", {productos: domes});
     },
  
     new: async (req, res) => {
         const destinations =  await db.Destination.findAll();
-<<<<<<< HEAD:src/controllers/bookingControllers.js
-        res.render('booking/new',{destinations});
-=======
         res.render("booking/new", {destinations});
->>>>>>> eda302959dc421eaab8e861c3db53aba637bc070:src/controllers/bookingController.js
     },
 
     edit: async (req, res) => {

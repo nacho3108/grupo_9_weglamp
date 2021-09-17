@@ -20,36 +20,9 @@ const storage = multer.diskStorage({
         // Se llama al callback con error (null) y el nombre del archivo.
         cb(null, filename)
     },
-<<<<<<< HEAD
-})
-
-const upload = multer({ storage })
-
-
-const bookingControllers = require('../controllers/bookingControllers');
-const validationNewDome = require('../middlewares/validationNewDome');
-
-bookingRoutes.get('/productDetail/:id?', bookingControllers.productDetail);
-bookingRoutes.get('/cartItem/', bookingControllers.cartItem);
-bookingRoutes.get('/productList/', bookingControllers.productList);
-bookingRoutes.get('/productSearch/:id?', bookingControllers.search);
-
-// Create
-bookingRoutes.get('/new',validationNewDome, bookingControllers.new);
-
-// aca deberíamos pasar multer
-bookingRoutes.post('/new', upload.single('image'),validationNewDome, bookingControllers.store);
-
-bookingRoutes.get('/edit/:id', bookingControllers.edit);
-bookingRoutes.put('/edit/:id', upload.single('image'), bookingControllers.update);
-
-bookingRoutes.get('/detalle/:id?', bookingControllers.detalle);
-bookingRoutes.delete('/detalle/:id', bookingControllers.destroy);
-=======
 });
 const upload = multer({storage});
 const bookingController = require('../controllers/bookingController');
->>>>>>> eda302959dc421eaab8e861c3db53aba637bc070
 
 bookingRoutes.get("/productDetail/:id?", bookingController.productDetail);
 bookingRoutes.get("/cartItem/", bookingController.cartItem);

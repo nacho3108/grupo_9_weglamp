@@ -6,12 +6,12 @@ module.exports = {
         try{
             // Peticiones a la base de datos.
             const domes = await db.Dome.findAndCountAll();
+            const destinations = await db.Destination.findAndCountAll();
             const domesByDestination = await db.Dome.findAll({
                 attributes: ["destinationId", [sequelize.fn("COUNT", "destinationId"), "count"]],
                 order: [["destinationId", "ASC"]],
                 group: "destinationId"});
             const domesInfo = [];
-            
 
             // Poblar el array con los datos necesarios de cada usuario.
             domes.rows.forEach(dome => {
@@ -29,7 +29,8 @@ module.exports = {
                 meta: {
                     status: "success",
                     count: domes.count,
-                    countByCategory: domesByDestination
+                    countByCategory: domesByDestination,
+                    categoryCount: destinations.count
                 },
                 data: {
                     domes: domesInfo

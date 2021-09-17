@@ -7,9 +7,11 @@ const notFound = require ("./middlewares/notFound");
 const session = require ("express-session");
 const createError = require('http-errors');
 const config = require("./config/config")
+const cors = require("cors");
 
 // Configuración de Express
 const app = express();
+app.use(cors()); // Para poder usar las APIs
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

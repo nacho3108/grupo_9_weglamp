@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include('../partials/head', {title: "profile"}) %> 
-    <link rel="stylesheet"  href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header>
@@ -31,15 +32,17 @@
             <h3><a href="#">Paquetes </a></h3>
             <p></p>
             <h3><a href="#">Seguros </a></h3>
-        </div>
-       
+        </div>   
     </header>
+
     <div class="profileContainer">
-   <h3 class ="profile"> BIENVENIDO!<br/>
-    <u><%= locals.logged.email %> </u></h3>
+        <h3 class ="profile"> BIENVENIDO!<br/>
+        <u><%= locals.logged.email %> </u></h3>
     
-    <br/>
-            <img class="image" width="100%" src="<%= locals.logged.image %>">
-        </div></section>
-        <footer> <%- include('../partials/footer') %></footer>
+        <br/>
+        <img class="image" width="100%" src="<%=locals.logged.image%>">
+        <% console.log(locals.logged) %>
+    </div>
+
+    <footer> <%- include('../partials/footer') %></footer>
 </html>

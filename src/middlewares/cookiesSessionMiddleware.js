@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
     
     // Si existe el cookie de usuario, revisa si es válido y lo pasa a sesión.
     if (userCookie) {
-        const user = await db.User.findByPk(userCookie, {attributes: ["id"]});
+        const user = await db.User.findByPk(userCookie.id, {attributes: ["id", "email", "image"]});
         if(user){
             req.session.logged = user;
         }

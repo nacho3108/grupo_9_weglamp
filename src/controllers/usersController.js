@@ -22,11 +22,11 @@ const usersController = {
 
         const {email, remember} = req.body;
         // Almacena en la sesión el ID del usuario.
-        let user = await db.User.findOne({where: {email}, attributes: ["id"]});
+        let user = await db.User.findOne({where: {email}, attributes: ["id", "email", "image"]});
         req.session.logged = user;
         // Si está activada la opción de recordar, genera la cookie.
         if(remember){
-            res.cookie("user", user.id, {maxAge: maxAgeUserCookie, signed: true});
+            res.cookie("user", user, {maxAge: maxAgeUserCookie, signed: true});
         }
 
         res.redirect("/user/profile");
